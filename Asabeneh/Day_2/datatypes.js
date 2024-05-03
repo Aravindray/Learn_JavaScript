@@ -168,3 +168,48 @@ console.log('Lets use regEx to find digits with flag (g)lobal',txt.match(/\d+/g)
 
 let again = 'Love '
 console.log('Lets repeat',again.repeat(10)) // repeat
+
+// Checking Data Type
+
+/*
+To check the data type of a value in a variable we use typeof keyword
+*/
+
+console.log(typeof fullName) // typeof
+console.log(typeof bornYear) // typeof
+console.log(typeof NaN) // typeof
+console.log(typeof true)  // typeof
+console.log(typeof undefined) // typeof
+console.log(typeof null) // typeof
+
+// Changing Data Type (Casting)
+
+/*
+Which means converting one data type to another data type. some methods are parseInt(), parseFloat(), Number(), + sign, str(), 
+*/
+
+// String to Number: Integer
+
+let strTen = '10'
+let prsInt = parseInt(strTen) // parseInt()
+console.log('prsInt',prsInt)
+let strToInt = Number(strTen) // Number()
+console.log('strToInt',strToInt)
+let plusInt = +strTen // +
+console.log('plusInt',plusInt)
+
+// String to Number: Float
+
+let strNine = '9.81'
+let prsFloat = parseFloat(strNine) // parseInt()
+console.log('prsFloat',prsFloat)
+let strToFloat = Number(strNine) // Number()
+console.log('strToFloat',strToFloat)
+let plusFloat = +strNine // +
+console.log('plusFloat',plusFloat)
+
+// Float to Integer
+
+let floatNum = 9.81
+let floatToInt = parseInt(floatNum) // parseInt()
+console.log('Float to Integer',floatToInt)
