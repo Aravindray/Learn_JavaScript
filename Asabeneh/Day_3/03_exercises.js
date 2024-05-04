@@ -148,4 +148,46 @@ let yourName = 'Aravind'
 yourName.length > 7 ? console.log('Your name is long') : console.log('Your name is short')
 
 console.log('---Question 11---')
+
 firstName.length > lastName.length ? console.log(`Your first name, ${firstName} is longer than your family name, ${lastName}`) : console.log(`Your first name, ${firstName} is shorter than your family name, ${lastName}`)
+
+console.log('---Question 12---')
+
+let myAge = 250
+let yourAge = 25
+
+myAge > yourAge ? console.log(`I am ${myAge - yourAge} years older than you.`) : console.log(`I am ${yourAge - myAge} years younger than you.`)
+
+console.log('---Question 13---')
+
+// let birthYear = prompt('Enter your born year:')
+let birthYear = 1999
+let currentYear = new Date().getFullYear()
+
+currentYear - birthYear < 18 ? console.log(`You are ${currentYear - birthYear}. You will be allowed to drive after ${18 - (currentYear - birthYear)} years.`) : console.log(`You are ${currentYear - birthYear}. You are old enough to drive`)
+
+console.log('---Question 14---')
+
+// let year = prompt('Enter no of years you live:')
+let yearLive = 100
+console.log(`You lived ${yearLive * 31536000} seconds`)
+
+console.log('---Question 15---')
+
+let year = new Date().getFullYear()
+let month = new Date().getMonth()
+let date = new Date().getDate()
+let hour = new Date().getHours()
+let minute = new Date().getMinutes()
+
+console.log(`${year}-${month}-${date} ${hour}:${minute}`)
+console.log(`${date}-${month}-${year} ${hour}:${minute}`)
+console.log(`${date}/${month}/${year} ${hour}:${minute}`)
+console.log()
+// Level 3
+
+console.log('// Level 3')
+
+console.log('---Question 1---')
+
+String(month).length < 2 && String(date).length < 2 ? console.log(`${year}-0${month}-0${date} ${hour}:${minute}`) : String(date).length < 2 ? console.log(`${year}-${month}-0${date} ${hour}:${minute}`) : console.log(`${year}-0${month}-${date} ${hour}:${minute}`)
