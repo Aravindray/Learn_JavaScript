@@ -85,11 +85,67 @@ console.log('// Level 2')
 /*
 console.log('---Question 1---')
 
-let base = prompt('Enter the base of the triangle')
-let height = prompt('Enter the height of the triangle')
-let areaTriangle = 0.5 * base * height
+let base = prompt('Enter the base of the triangle:')
+let height = prompt('Enter the height of the triangle:')
+let areaTriangle = 0.5 * +base * +height
 alert(`Entered base is ${base}cm and height is ${height}cm and area of triangle is ${areaTriangle}cm`)
 
-*/
+console.log('---Question 2---')
+
+let a = prompt('Enter the side a of the triangle:')
+let b = prompt('Enter the side b of the triangle:')
+let c = prompt('Enter the side c of the triangle:')
+let perimeterTriangle = +a + +b + +c
+alert(`The perimeter of the triangle is ${perimeterTriangle}`)
+
+console.log('---Question 3---')
+
+let length = prompt('Enter the length of the rectangle:')
+let width = prompt('Enter the width of the rectangle:')
+alert(`The area of rectangle is ${+length * +width}`)
+alert(`The perimeter of rectangle is ${2 * (+length + +width)}`)
+
+console.log('---Question 4---')
+const PI = 3.14
+let radius = prompt('Enter the radius of the circle:')
+alert(`Area of the circle is ${PI * +radius * +radius}`)
+alert(`Circumference of the circle is ${2 * PI * +radius}`)
 
 console.log('---Question 5---')
+
+Calculate the slope, x-intercept and y-intercept of y = 2x -2
+*/
+
+console.log('---Question 6---')
+
+let x1 = 2
+let y1 = 2
+let x2 = 6
+let y2 = 10
+
+let slope = (y2 - y1) / (x2 - x1)
+
+console.log('Slope is',slope)
+
+// console.log('---Question 7---') Compare the slope of above two questions.
+
+console.log('---Question 8---')
+let x = -3
+let y = x ** 2 + 6 * x + 9
+console.log(`x is ${x} and y is ${y}`)
+
+/*
+console.log('---Question 9---')
+
+let hours = prompt('Enter the hours:')
+let rate = prompt('Enter the rate per hour:')
+alert(`Rate per hour is ${rate} and worked hours is ${hours} so you earned ${+hours * +rate}`)
+*/
+
+console.log('---Question 10---')
+
+let yourName = 'Aravind'
+yourName.length > 7 ? console.log('Your name is long') : console.log('Your name is short')
+
+console.log('---Question 11---')
+firstName.length > lastName.length ? console.log(`Your first name, ${firstName} is longer than your family name, ${lastName}`) : console.log(`Your first name, ${firstName} is shorter than your family name, ${lastName}`)
