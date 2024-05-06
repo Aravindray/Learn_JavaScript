@@ -228,6 +228,23 @@ const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
 
 ages.sort()
 
-console.log('1a - Minimum Age', ages[0])
+console.log('Sorted ages',ages)
 
-console.log('1b - Maximum Age', ages[ages.length - 1])
+console.log('1.1.a - Minimum Age', ages[0])
+
+console.log('1.1.b - Maximum Age', ages[ages.length - 1])
+
+if (ages.length % 2 === 0) {
+    let median = (ages[ages.length / 2 - 1] + ages[ages.length / 2]) / 2
+    console.log('1.2 - Median',median)
+}
+else {
+    median = ages[Math.floor(ages.length / 2)]
+    console.log('1.2 - Median',median)
+}
+
+// 1.3 Not able to sum all the element in an array
+
+console.log(`1.4 Ages range - maximum is ages ${ages[ages.length - 1]} and minimum is ${ages[0]} and range is ${ages[ages.length - 1] - ages[0]}`)
+
+// 1.5 Not able to solve, because need a solution to find the average ages

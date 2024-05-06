@@ -204,3 +204,25 @@ else {
 }
 
 // export default countries;
+
+// Level 3
+
+console.log('// Level 3')
+
+console.log('---Question 2---')
+
+countries.sort()
+
+console.log('2.1 First 10 Countries', countries.slice(0, 10))
+
+console.log('2.2 Middle Country -',countries[Math.floor(countries.length / 2)])
+
+let firstHalf = countries.slice(0, Math.floor(countries.length / 2)+1)
+let secondHalf = countries.slice(Math.floor(countries.length / 2), countries.length - 1)
+
+console.log('First Half', firstHalf)
+console.log('Second Half', secondHalf)
+
+console.log('Total Countries Count',countries.length)
+console.log('First Half Countries Count',firstHalf.length)
+console.log('Second Half Countries Count',secondHalf.length)
