@@ -194,6 +194,13 @@ const countries = [
     'Zimbabwe'
 ]
 
-console.log(countries)
+if (countries.includes('Ethiopia')) {
+    let indexOfEthiopia = countries.indexOf('Ethiopia')
+    console.log(countries[indexOfEthiopia].toUpperCase())
+}
+else {
+    countries.push('Ethiopia')
+    console.log('Ethiopia added in the list')
+}
 
-export default countries;
+// export default countries;

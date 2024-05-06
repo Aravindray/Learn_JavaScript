@@ -155,4 +155,79 @@ console.log('After',itCompanies)
 
 console.log('---Level 2---')
 
-// console.log('---Question 1---') - Check main file for more info
+// console.log('---Question 1---') - Check main file for more info - Not able to complete it
+
+console.log('---Question 2---')
+
+let text = 'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.'
+let words = text.replace(/[^a-zA-Z\s]/g, '').split(' ')
+console.log(words)
+console.log('Length of words', words.length)
+
+console.log('---Question 3---')
+
+const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+
+if (shoppingCart.includes('Meat')) {
+    console.log('Meat is already available in the list')
+}
+else {
+    shoppingCart.unshift('Meat')
+    console.log('Meat is added beginning of the list')
+    console.log(shoppingCart)
+}
+
+if (shoppingCart.includes('Sugar')) {
+    console.log('Sugar is already available in the list')
+}
+else {
+    shoppingCart.push('Sugar')
+    console.log('Sugar is added end of the list')
+    console.log(shoppingCart)
+}
+
+if (shoppingCart.includes('Honey')) {
+    console.log('I will remove Honey even though if I am not allergic to it')
+    let indexOfHoney = shoppingCart.indexOf('Honey')
+    shoppingCart.splice(indexOfHoney,1)
+    console.log('Shopping Cart after remove Honey',shoppingCart)
+}
+else {
+    console.log('Honey is not in the cart')
+}
+
+if (shoppingCart.includes('Tea')) {
+    let indexOfTea = shoppingCart.indexOf('Tea')
+    shoppingCart[indexOfTea] = 'Green Tea'
+    console.log('After modifying the Tea', shoppingCart)
+}
+else {
+    console.log('Tea not in the list')
+}
+
+// console.log('---Question 4---') check 05_countries.js file
+
+// console.log('---Question 5---') check 05_web_techs.js file
+
+console.log('---Question 6---')
+
+const frontEnd = ['HyperText Markup Language', 'Cascading Style Sheet', 'JavaScript', 'React', 'Redux']
+const backEnd = ['Node', 'Express', 'MongoDB']
+
+const fullStack = frontEnd.concat(backEnd)
+
+console.log(fullStack)
+
+// Level 3
+
+console.log('---Level 3---')
+
+console.log('---Question 1---')
+
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+
+ages.sort()
+
+console.log('1a - Minimum Age', ages[0])
+
+console.log('1b - Maximum Age', ages[ages.length - 1])
