@@ -169,8 +169,140 @@ console.log(findMax(num1, num2, num3))
 
 console.log('// Level 2')
 
+/*
 console.log('---Question 1---')
 
 function solveLinEquation() {
-    
+
 }
+
+console.log('---Question 2---')
+*/
+
+console.log('---Question 3---')
+
+function printArray(arr) {
+    for (const element of arr) {
+        console.log(element)
+    }
+}
+let someNumbers = [1, 3, 5, 7, 9, 11]
+printArray(someNumbers)
+
+console.log('---Question 4---')
+
+function showDateTime() {
+    let now = new Date()
+    let date = `${now.getDate()}`
+    let month = `${now.getMonth() + 1}`
+    let year = now.getFullYear()
+    let hours = `${now.getHours()}`
+    let minutes = `${now.getMinutes()}`
+    if (date.length < 2) {
+        date = `0${date}`
+    }
+    if (month.length < 2) {
+        month = `0${month}`
+    }
+    if (hours.length < 2) {
+        hours = `0${hours}`
+    }
+    if (minutes.length < 2) {
+        minutes = `0${minutes}`
+    }
+    console.log(`${date}/${month}/${year} ${hours}:${minutes}`)
+}
+showDateTime()
+
+console.log('---Question 5---')
+
+function swapValues(a, b) {
+    return [b, a]
+}
+
+let [x, y] = swapValues(10, 14)
+console.log(`x = ${x}, y = ${y}`)
+
+console.log('---Question 6---')
+
+function reverseArray(arr) {
+    let reverseArr = []
+    for (let i = arr.length - 1; i >= 0 ; i--) {
+        reverseArr.push(arr[i])
+    }
+    return reverseArr
+}
+console.log(reverseArray(someNumbers))
+
+console.log('---Question 7---')
+
+function capitalizedArray(arr) {
+    let capArr = []
+    for (const element of arr) {
+        capArr.push(element.toUpperCase())
+    }
+    return capArr
+}
+
+let countries = ['America', 'United Kingdom', 'China', 'Finland', 'Canada']
+console.log(capitalizedArray(countries))
+
+// console.log('---Question 8---') - Need clarity
+// console.log('---Question 9---') - Need clarity
+
+console.log('---Question 10---')
+
+function sumOfNumbers(range) {
+    let sum = 0
+    for (let i = 1; i <= range; i++) {
+        sum += i
+    }
+    return sum
+}
+console.log(sumOfNumbers(5))
+
+console.log('---Question 11---')
+
+function sumOfOdds(range) {
+    let sum = 0
+    for (let i = 1; i <= range; i++) {
+        if (i % 2 !== 0) {
+            sum += i
+        }
+    }
+    return sum
+}
+console.log(sumOfOdds(5))
+
+console.log('---Question 12---')
+
+function sumOfEven(range) {
+    let sum = 0
+    for (let i = 1; i <= range; i++) {
+        if(i % 2 === 0) {
+            sum += i
+        }
+    }
+    return sum
+}
+console.log(sumOfEven(5))
+
+console.log('---Question 13---')
+
+function evensAndOdds(range) {
+    let evenCount = 0
+    let oddCount = 0
+    for (let i = 0; i <= range; i++) {
+        if (i % 2 === 0) {
+            evenCount += 1
+        }
+        else {
+            oddCount += 1
+        }
+    }
+    console.log(`The numbers of odds are ${oddCount}`)
+    console.log(`The numbers of evens are ${evenCount}`)
+}
+evensAndOdds(100)
+
+console.log('---Question 14---')
