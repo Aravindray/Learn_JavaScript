@@ -65,3 +65,42 @@ else {
 
 console.log('---Question 8---')
 
+let iaCountries = []
+let iaCountriesNot = []
+for (const country of countries) {
+    if (country.includes('ia')) {
+        iaCountries.push(country)
+    }
+    else {
+        iaCountriesNot.push(country)
+    }
+}
+if (iaCountries.length ===  0) {
+    console.log('These are countries ends without ia',iaCountriesNot)
+}
+else {
+    console.log(iaCountries)
+}
+
+console.log('---Question 9---')
+
+let charCount = 0
+let lengthiestCountryName = []
+for (const country of countries) {
+    if (country.length > charCount) {
+        lengthiestCountryName = []
+        lengthiestCountryName.push(country)
+        charCount = country.length
+    }
+}
+console.log(lengthiestCountryName.toString())
+
+console.log('---Question 10---')
+
+let fiveCharCountry = []
+for (const country of countries) {
+    if (country.length === 5) {
+        fiveCharCountry.push(country)
+    }
+}
+console.log(fiveCharCountry)

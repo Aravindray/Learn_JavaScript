@@ -174,3 +174,48 @@ for (let g_3 = 0; g_3 < 3; g_3++) {
     rgb.push(randomRGB)
 }
 console.log(`rgb(${rgb[0]},${rgb[1]},${rgb[2]})`)
+
+const webTechs = [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'React',
+    'Redux',
+    'Node',
+    'MongoDB'
+]
+
+console.log('---Question 11---')
+
+let charCount = 0
+let longestChar = []
+for (const tech of webTechs) {
+    if (tech.length > charCount) {
+        longestChar = []
+        longestChar.push(tech)
+        charCount = tech.length
+    }
+}
+console.log(longestChar.toString())
+
+console.log('---Question 12---')
+
+let insideArr = []
+let outsideArr = []
+for (const tech of webTechs) {
+    insideArr.push(tech)
+    insideArr.push(tech.length)
+    outsideArr.push(insideArr)
+    insideArr = []
+}
+console.log(outsideArr)
+
+const mernStack = ['MongoDB', 'Express', 'React', 'Node']
+
+console.log('---Question 13---')
+
+let abbr = ''
+for (const stack of mernStack) {
+    abbr += stack[0].toUpperCase()
+}
+console.log(abbr)
