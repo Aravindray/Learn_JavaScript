@@ -1,5 +1,7 @@
 // Level 1
 
+console.log('// Level 1')
+
 console.log('---Question 1.a---')
 for (let a_1 = 0; a_1 <= 10; a_1++) {
     console.log(a_1)
@@ -175,6 +177,111 @@ for (let g_3 = 0; g_3 < 3; g_3++) {
 }
 console.log(`rgb(${rgb[0]},${rgb[1]},${rgb[2]})`)
 
+const countries = [
+    'Albania',
+    'Bolivia',
+    'Canada',
+    'Denmark',
+    'Ethiopia',
+    'Finland',
+    'Germany',
+    'Hungary',
+    'Ireland',
+    'Japan',
+    'Kenya'
+]
+
+console.log('---Question 4---')
+
+let upperCountries = []
+for (const country of countries) {
+    upperCountries.push(country.toUpperCase())
+}
+console.log(upperCountries)
+
+console.log('---Question 5---')
+
+let countriesLength = []
+for (const country of countries) {
+    countriesLength.push(country.length)
+}
+console.log(countriesLength)
+
+console.log('---Question 6---')
+
+let countryDetails = []
+let arrOfCountryDetails = []
+
+for (const country of countries) {
+    let threeLetter = country.slice(0,3).toUpperCase()
+    let lenOfCountry = country.length
+    countryDetails.push(country)
+    countryDetails.push(threeLetter)
+    countryDetails.push(lenOfCountry)
+    arrOfCountryDetails.push(countryDetails)
+    countryDetails = []
+}
+console.log(arrOfCountryDetails)
+
+console.log('---Question 7---')
+
+let landCountries = []
+for (const country of countries) {
+    if (country.includes('land')) {
+        landCountries.push(country)
+    }
+}
+if (landCountries.length === 0) {
+    console.log('All these countries are without land')
+}
+else {
+    console.log(landCountries)
+}
+
+console.log('---Question 8---')
+
+let iaCountries = []
+let iaCountriesNot = []
+for (const country of countries) {
+    if (country.includes('ia')) {
+        iaCountries.push(country)
+    }
+    else {
+        iaCountriesNot.push(country)
+    }
+}
+if (iaCountries.length ===  0) {
+    console.log('These are countries ends without ia',iaCountriesNot)
+}
+else {
+    console.log(iaCountries)
+}
+
+console.log('---Question 9---')
+
+let newCharCount = 0
+let lengthiestCountryName = []
+for (const country of countries) {
+    if (country.length > newCharCount) {
+        lengthiestCountryName = []
+        lengthiestCountryName.push(country)
+        newCharCount = country.length
+    }
+}
+console.log(lengthiestCountryName.toString())
+
+console.log('---Question 10---')
+
+let fiveCharCountry = []
+for (const country of countries) {
+    if (country.length === 5) {
+        fiveCharCountry.push(country)
+    }
+}
+console.log(fiveCharCountry)
+
+
+
 const webTechs = [
     'HTML',
     'CSS',
@@ -184,6 +291,7 @@ const webTechs = [
     'Node',
     'MongoDB'
 ]
+
 
 console.log('---Question 11---')
 
@@ -219,3 +327,41 @@ for (const stack of mernStack) {
     abbr += stack[0].toUpperCase()
 }
 console.log(abbr)
+
+const fullStack = ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"]
+
+console.log('---Question 14---')
+
+console.log('Using for of')
+for (const stack of fullStack) {
+    console.log(stack)
+}
+console.log('Using index')
+for(let g_4 = 0; g_4 < fullStack.length; g_4++) {
+    console.log(fullStack[g_4])
+}
+
+console.log('---Question 15---')
+
+const fruit = ['banana', 'orange', 'mango', 'lemon']
+
+const reverseFruit = []
+
+for (let g_5 = fruit.length - 1; g_5 >= 0; g_5--) {
+    reverseFruit.push(fruit[g_5])
+}
+console.log(fruit)
+console.log(reverseFruit)
+
+console.log('---Question 16---')
+
+for (const stack of fullStack) {
+    console.log(stack.toUpperCase())
+}
+
+console.log('// Level 3')
+
+console.log('---Question 3---')
+
+console.log(webTechs.sort())
+console.log(mernStack.sort())
