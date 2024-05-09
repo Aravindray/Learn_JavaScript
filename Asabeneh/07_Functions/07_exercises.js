@@ -359,10 +359,42 @@ function userIdGenerator() {
         if (upperLower === 0) {
             id += alphaNumber[Math.floor(Math.random() * alphaNumber.length)].toUpperCase()
         }
-        else {
-            id += alphaNumber[Math.floor(Math.random() * alphaNumber.length)].toLowerCase()
-        }
+        id += alphaNumber[Math.floor(Math.random() * alphaNumber.length)]
     }
     return id
 }
 console.log(userIdGenerator())
+
+// Level 3
+
+console.log('// Level 3')
+
+console.log('---Question 1---')
+
+function userIdGeneratedByUser() {
+    let charCount = 5 // prompt('Enter the character count')
+    let idCount = 5 // prompt('Enter the ID Count')
+    let result = ''
+    let id = []
+    let lowerUpper
+    for (let i = 0; i < idCount; i++) {
+        for (let j = 0; j < charCount; j++) {
+            lowerUpper = Math.floor(Math.random() * 2)
+            if (lowerUpper === 0) {
+                result += alphaNumber[Math.floor(Math.random() * alphaNumber.length)].toUpperCase()
+            }
+            result += alphaNumber[Math.floor(Math.random() * alphaNumber.length)]
+        }
+        id += result + '\n'
+        result = ''
+    }
+    return id
+}
+console.log(userIdGeneratedByUser())
+
+console.log('---Question 2---')
+
+function rgbColorGenerator() {
+    return `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`
+}
+console.log(rgbColorGenerator())
