@@ -306,3 +306,63 @@ function evensAndOdds(range) {
 evensAndOdds(100)
 
 console.log('---Question 14---')
+
+function sumOfArguments() {
+    let sum = 0
+    for (const element of arguments) {
+        sum += element
+    }
+    return sum
+}
+console.log(sumOfArguments(1, 2, 3))
+console.log(sumOfArguments(1, 2, 3, 4))
+
+console.log('---Question 15---')
+
+function randomUserIP() {
+    return `${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}.${Math.floor(Math.random() * 256)}`
+}
+console.log(randomUserIP())
+
+console.log('---Question 16---')
+
+const hexDigits = ['A', 'B', 'C', 'D', 'E', 'F', 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+function randomGenerator() {
+    let a = hexDigits[Math.floor(Math.random() * hexDigits.length)]
+    let b = hexDigits[Math.floor(Math.random() * hexDigits.length)]
+    return `${a}${b}`
+}
+
+function randomMacAddress() {
+    // Example fo MAC Address 2C:54:91:88:C9:E3
+    let result = `${randomGenerator()}:${randomGenerator()}:${randomGenerator()}:${randomGenerator()}:${randomGenerator()}:${randomGenerator()}`
+    return result
+}
+console.log(randomMacAddress())
+
+console.log('---Question 17---')
+
+function randomHexNumberGenerator() {
+    return `#${randomGenerator()}${randomGenerator()}${randomGenerator()}`
+}
+console.log(randomHexNumberGenerator())
+
+console.log('---Question 18---')
+
+const alphaNumber = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+function userIdGenerator() {
+    let id = ''
+    for (let i = 0; i < 7; i++) {
+        let upperLower = Math.floor(Math.random() * 2)
+        if (upperLower === 0) {
+            id += alphaNumber[Math.floor(Math.random() * alphaNumber.length)].toUpperCase()
+        }
+        else {
+            id += alphaNumber[Math.floor(Math.random() * alphaNumber.length)].toLowerCase()
+        }
+    }
+    return id
+}
+console.log(userIdGenerator())
