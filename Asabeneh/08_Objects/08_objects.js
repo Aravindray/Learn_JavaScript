@@ -64,7 +64,7 @@ console.log(person['age'])
 console.log(person['location'])
 console.log(person['phone number']) // We can only able to access the value by square method because of space between
 
-// Creating Object Methods
+// Creating Object Methods (or Functions inside the object)
 
 /*
 Now the person object has getFullName property, getFullName is the function inside the person object and we call it "Object Methods". the "this" keyword refer to the object itself, with the help "this" keyword we can access values of different properties inside the object.
@@ -97,3 +97,86 @@ person.getPersonalInfo = function() {
 
 console.log(person)
 console.log(person.getPersonalInfo())
+
+// Object Methods
+
+/*
+We can manipulate the object, here are few methods
+1. Object.assign()
+2. Object.keys()
+3. Object.values()
+4. Object.entries()
+5. Object.hasOwnProperty()
+*/
+
+// Object.assign()
+
+/*
+Copy the object without modifying the original one.
+
+Syntax:
+
+const newObjectName = Object.assign({}, oldObjectName | originalObjectName)
+*/
+
+console.log('Object.assign() Example')
+const personCopy = Object.assign({}, person)
+console.log(personCopy)
+
+// Object.keys()
+
+/*
+
+Return all the properties names/keys as array
+
+Syntax:
+
+const variableName = Object.keys(objectName)
+*/
+
+console.log('Object.keys() Example')
+const keys = Object.keys(personCopy)
+console.log(keys)
+
+// Object.values()
+
+/*
+Return all the properties values as array
+
+syntax:
+
+const variableName = Object.values(objectName)
+*/
+
+console.log('Object.values() Example')
+const values = Object.values(personCopy)
+console.log(values)
+
+// Object.entries()
+
+/*
+Return all the keys and values as 2d array
+
+syntax:
+
+const variableName = Object.entries(ObjectName)
+*/
+
+console.log('Object.entries() Example')
+const entries = Object.entries(personCopy)
+console.log(entries)
+
+// Object.hasOwnProperty()
+
+/*
+This method will check if the given key / property exist in the object and return true or false result
+
+syntax:
+
+ObjectName.hasOwnProperty('KeyName')
+*/
+
+console.log('Object.hasOwnProperty() Example')
+console.log(personCopy.hasOwnProperty('country'))
+let doesItExist = personCopy.hasOwnProperty('name')
+console.log(doesItExist)
