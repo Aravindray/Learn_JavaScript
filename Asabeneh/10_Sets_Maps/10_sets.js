@@ -119,3 +119,31 @@ console.log(setOfB)
 console.log(setOfC)
 
 // Intersection of Set (A ∩ B)
+
+/*
+To find the intersection between 2 sets we use filter method cleverly.
+*/
+
+console.log('Set Intersection')
+
+const d = a.filter(ele => setOfB.has(ele))
+console.log(d)
+
+const setOfD = new Set(d)
+console.log(setOfD)
+
+// Difference between 2 sets (A - B) and (B - A)
+
+/*
+We Use filter method to find the differences.
+*/
+
+console.log('Set Differences')
+
+const AB = a.filter(ele => !setOfB.has(ele))
+const setOfAB = new Set(AB)
+console.log(setOfAB)
+
+const BA = b.filter(ele => !setOfA.has(ele))
+const setOfBA = new Set(BA)
+console.log(setOfBA)
