@@ -250,7 +250,7 @@ Anonymous Function or function without functionName
 
 Syntax:
 
-const variableName = function() {
+function() {
     // Code
 }
 
@@ -293,7 +293,8 @@ console.log(square2(4))
 // Functions: Self Invoking Function
 
 /*
-Self Invoking Function are also anonymous function which do not need to called to return values.
+Self Invoking Function are also anonymous function which do not need to call to 
+return values.
 
 Syntax:
 
