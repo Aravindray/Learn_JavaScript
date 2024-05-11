@@ -398,3 +398,75 @@ function rgbColorGenerator() {
     return `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`
 }
 console.log(rgbColorGenerator())
+
+console.log('---Question 3---')
+
+const arraysOfHexColors = (noOfElements) => {
+    let result = []
+    for (let i = 0; i < noOfElements; i++) {
+        result.push(randomHexNumberGenerator())        
+    }
+    return result
+}
+console.log(arraysOfHexColors(6))
+
+console.log('---Question 4---')
+
+const arraysOfRgbColors = (noOfElements) => {
+    let result = []
+    for (let i = 0; i < noOfElements; i++) {
+        result.push(rgbColorGenerator())
+    }
+    return result
+}
+console.log(arraysOfRgbColors(6))
+
+// console.log('---Question 5---')
+// console.log('---Question 6---')
+
+console.log('---Question 7---')
+
+const generateColors = (name, noOfElements) => {
+    if (name === 'hex') {
+        return arraysOfHexColors(noOfElements)
+    }
+    else if (name === 'rgb') {
+        return arraysOfRgbColors(noOfElements)
+    }
+    else {
+        return `Not a valid input`
+    }
+}
+console.log(generateColors('rgb', 8))
+
+console.log('---Question 8---')
+
+function shuffleArray(arr) {
+    let duplicateArray = [...arr]
+    let result = []
+    while (result.length <= 5) {
+        let randomIndex = Math.floor(Math.random() * duplicateArray.length)
+        if (result.includes(duplicateArray[randomIndex])) {
+            continue
+        }
+        else {
+            result.push(duplicateArray[randomIndex])
+        }
+    }
+    return result
+}
+
+console.log('Original',someNumbers)
+console.log('After Shuffle')
+console.log(shuffleArray(someNumbers))
+
+console.log('---Question 9---')
+
+function factorial(number) {
+    let result = 1
+    for (let i = number; i >=1; i--) {
+        result *= i
+    }
+    return result
+}
+console.log(factorial(1))

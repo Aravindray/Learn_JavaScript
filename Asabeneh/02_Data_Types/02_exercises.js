@@ -1,4 +1,5 @@
 // Level 2
+
 console.log()
 console.log('The quote \'There is no exercise better for the heart than reaching down and lifting people up.\' by John Holmes teaches us to help one another.')
 console.log()
@@ -38,7 +39,9 @@ console.log('newPhrase Slice',newPhrase.substr(31, 23))
 console.log()
 console.log('----End of Level 2----')
 console.log()
+
 // Level 3
+
 let love = 'Love is the best thing in this world. Some found their love and some are still looking for their love.'
 let loveCount = love.match(/Love/gi)
 console.log(loveCount)

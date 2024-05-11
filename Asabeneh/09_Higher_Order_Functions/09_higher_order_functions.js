@@ -59,19 +59,19 @@ syntax:
 setTimeout(callbackFunction, timeDuration)  // timeDuration in milliseconds
 */
 
-// console.log('setTimeout Function Example')
-// function isItPossible() {
-//     function sayHello(name) {
-//         console.log(`Hello, ${name}`)
-//     }
-//     return sayHello('Aravind')
-// }
-// setTimeout(isItPossible, 2000)
+console.log('setTimeout Function Example')
+function isItPossible() {
+    function sayHello(name) {
+        console.log(`Hello, ${name}`)
+    }
+    return sayHello('Aravind')
+}
+setTimeout(isItPossible, 2000)
 
-// function sayHi(name) {
-//     console.log(`Hi, ${name}`)
-// }
-// setTimeout(function() { sayHi('Aravindray') }, 2500)
+function sayHi(name) {
+    console.log(`Hi, ${name}`)
+}
+setTimeout(function() { sayHi('Aravindray') }, 2500)
 
 // setInterval Function
 
@@ -83,12 +83,12 @@ Syntax:
 setInterval(callbackFunction, timeDuration) // timeDuration in milliseconds.
 */
 
-// const executeThis = () => console.log(`Hello, World!`)
-// function waitHere() {
-//     console.log('setInterval Function Example')
-//     setInterval(executeThis, 5000) // 1000ms = 1s
-// }
-// setTimeout(waitHere, 3000)
+const executeThis = () => console.log(`Hello, World!`)
+function waitHere() {
+    console.log('setInterval Function Example')
+    setInterval(executeThis, 5000) // 1000ms = 1s
+}
+setTimeout(waitHere, 3000)
 
 // More Higher Order function
 
