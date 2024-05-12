@@ -257,3 +257,90 @@ const toDoList = [
 for (const {task, estimatedTime, isCompleted} of toDoList) {
     console.log(task, '-', estimatedTime, '-', isCompleted)
 }
+
+// Spread or Rest Operator
+
+/*
+When we destructure the array we use spread operator to get the rest of the element as a array.
+*/
+
+console.log('Spread Operator')
+
+console.log(newNumbers)
+let [n1, n2, n3, ...newRest] = newNumbers
+console.log(n1, n2, n3)
+console.log(...newRest)
+
+const newCountries = [
+    'Germany',
+    'France',
+    'Belgium',
+    'Finland',
+    'Sweden',
+    'Norway',
+    'Denmark',
+    'Iceland'
+]
+
+let [gem, fra, , ...restCountries] = newCountries
+
+console.log(gem)
+console.log(fra)
+console.log(restCountries)
+
+console.log('Spread operator to copy array')
+
+const evens = [0, 2, 4, 6, 8, 10]
+const evenNumbers = [...evens]
+
+const odds = [1, 3, 5, 7, 9]
+const oddNumbers = [...odds]
+
+const wholeNumbers = [...evens, ...odds]
+
+console.log(evenNumbers)
+console.log(oddNumbers)
+console.log(wholeNumbers)
+
+const newFrontEnd = ['HTML', 'CSS', 'JS', 'React']
+const newBackEnd = ['Node', 'Express', 'MongoDB']
+const newFullStack = [...newFrontEnd, ...newBackEnd]
+
+console.log(newFullStack)
+
+// Spread operator to copy object
+
+const user = {
+    name: 'Aravind',
+    title: 'Programmer',
+    country: 'Finland',
+    city: 'Helsinki'
+}
+
+const copyUser = {...user}
+console.log(copyUser)
+
+// Modifying or changing the object while copying
+
+const copiedUser = {...user, title: 'New Programmer'}
+console.log(copiedUser)
+
+// Spread operator with arrow function
+
+/*
+When we work with arrow function if user pass numbers of arguments we use spread operator. If we use a spread operator as a parameter, the arguments passed when we invoke a function will change to an array.
+*/
+
+const returnArguments = (...args) => {
+    console.log(args)
+}
+returnArguments(3, 2, 54, 32, 43, 32)
+
+const sumAllNum = (...args) => {
+    let sum = 0
+    for (const num of args) {
+        sum += num
+    }
+    return sum
+}
+console.log(sumAllNum(74, 84, 3298, 84, 84))
