@@ -268,3 +268,24 @@ console.log(matches12)
 let pattern16 = /\d{1,4}/g // 1 to 4 digits
 let matches13 = example1.match(pattern16)
 console.log(matches13) 
+
+// Cart ^ Starts with
+
+console.log('^ Startswith / Cart')
+
+let pattern17 = /^This/g
+let matches14 = example1.match(pattern17)
+console.log(matches14)
+
+let pattern18 = /[^a-zA-Z,. ]+/g // not a - z, not A - Z, not comma, not period, not space
+let matches15 = example1.match(pattern18)
+console.log(matches15)
+
+// Exact match
+
+console.log('Let\'s check exact match')
+
+let pattern = /^[A-za-z]{3,12}$/g
+let myName = 'Aravind'
+let matches16 = pattern.test(myName)
+console.log(matches16)
