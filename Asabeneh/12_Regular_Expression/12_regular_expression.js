@@ -150,8 +150,13 @@ console.log(removePercentage)
 2. \ is used to escape special character
     \d means, match where string contain digits (0-9)
     \D means, match where string does not contain digits
+    \b means, word bounder matches with beginning or ending of the word
+    \s means, whitespace
+    \S means, not whitespace
+    \w means, word character
+    \W means, not word character
 
-3. . full stop is used to any character except new line \n
+3. . period is used to any character except new line \n
 
 4. ^ Starts With
     /^love/ means sentence starts with word love, but
@@ -160,5 +165,106 @@ console.log(removePercentage)
 5. $ Ends With
     /love$/ means sentence ends with word love
 
-6. * zero or more time
+6. * zero or more times */
+// /a*/ means, zero or more times
+/*
+7. + one or more times
+    /a+/ one or more times, at least one
+
+8. ? zero or one time
+    /a?/ means, zero times or once or optional character
+
+9. {} Quantifiers
+    {3} means, Exactly 3 characters
+    {3, } means, at least 3 characters
+    {3, 8} means, 3 to 8 characters
+
+10. | Either or
+    /apple|orange/ means, select either apple or orange
+
+11. () Captures and group
+    (?:) means, not capture the group
+    (?=) means, positive lookahead with <, > we check before and after characters
+    (?!) means, negative lookahead
 */
+
+// Square brackets []
+
+console.log('Square bracket [] example')
+
+let pattern4 = /[Aa]pple/
+let sillyProverb = 'Apple and banana are fruits. An old cliche says an apple a day keeps the  doctor way has been replaced by a banana a day keeps the doctor far far away.'
+let matches1 = sillyProverb.match(pattern4)
+console.log(matches1)
+
+let pattern5 = /[Aa]pple/g
+let matches2 = sillyProverb.match(pattern5)
+console.log(matches2)
+
+let pattern6 = /[Aa]pple|[Bb]anana/g
+let matches3 = sillyProverb.match(pattern6)
+console.log(matches3)
+
+// Escape Character
+
+console.log('Escape Character')
+
+let pattern7 = /\d/g
+const example1 = 'This regular expression example was made in January 12, 2020'
+let matches4 = example1.match(pattern7)
+console.log(matches4)
+
+let pattern8 = /\d+/g
+let matches5 = example1.match(pattern8)
+console.log(matches5)
+
+// Period .
+
+console.log('. Period Example')
+
+let pattern9 = /[a]./g
+let text1 = 'Apple and Orange are fruits.\nGrapes and mango are also fruits.'
+let matches6 = text1.match(pattern9)
+console.log(matches6)
+
+let pattern10 = /[a].+/g
+let matches7 = text1.match(pattern10)
+console.log(matches7)
+
+// * Zero or more times
+
+console.log('* Zero or More times')
+
+let pattern11 = /[a].*/g
+let matches8 = text1.match(pattern11)
+console.log(matches8)
+
+// ? Zero or one time / or optional
+
+console.log('? Zero or one time / or optional')
+
+let emailConfusion = 'I am not sure if there is a convention how to write the word e-mail.\
+Some people write it email others may write it as Email or E-mail.'
+let pattern12 = /[Ee]-?mail/g
+let matches9 = emailConfusion.match(pattern12)
+console.log(matches9)
+
+// Quantifier in RegExp
+
+console.log('Quantifier in RegExp')
+
+let pattern13 = /\b\w{4}\b/g // exactly four words
+let matches10 = example1.match(pattern13)
+console.log(matches10)
+
+let pattern14 = /\b[a-zA-Z]{4}\b/g // exactly four words without numbers
+let matches11 = example1.match(pattern14)
+console.log(matches11)
+
+let pattern15 = /\d{4}/g // exactly four digits only
+let matches12 = example1.match(pattern15)
+console.log(matches12)
+
+let pattern16 = /\d{1,4}/g // 1 to 4 digits
+let matches13 = example1.match(pattern16)
+console.log(matches13) 
