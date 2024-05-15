@@ -1,0 +1,68 @@
+{
+    // JSON
+    
+    // Abbreviation of JSON is JavaScript Object Notation, which syntax is similar to javascript object key 
+    // value pair. JSON is light weight data format for storing and transporting. It is mostly used when
+    // the data needs to send from server to client.
+
+    /*
+    Syntax:
+    {
+    "key" : "value"
+    }
+    */
+    
+    // It always starts with curly bracket, key must have single or double quotes.
+
+    "users": [
+        {
+            "firstName": "Aravind",
+            "lastName": "Ray",
+            "age": 24,
+            "email": "aravind@aravind.com"
+        },
+        {
+            "firstName": "Alex",
+            "lastName": "James",
+            "age": 24,
+            "email": "alex@alex.com"
+        },
+        {
+            "firstName": "Rich",
+            "lastName": "Bell",
+            "age": 17,
+            "email": "rich@rich.com"
+        }
+    ],
+    
+    // Some Examples
+
+    "Alex": {
+        "email": "alex@alex.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "age": 20,
+        "isLoggedIn": false,
+        "points": 30
+    },
+    "Asab": {
+        "email": "asab@asab.com",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Redux",
+            "MongoDB",
+            "Express",
+            "React",
+            "Node"
+        ],
+        "age": 25,
+        "isLoggedIn": false,
+        "points": 50
+    }
+    // and so on...
+}
