@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning JavaScript - Web Storage</title>
+</head>
+<body>
+    <header>
+        <h1>Web Storages</h1>
+    </header>
+    <main>
+        <article>
+            <section>
+                <p>HTML5 Web storage allows us to store data in local machine. New HTML5 API offering advance feature than traditional cookies. Web storage is more secure and large amount of data can store locally, without affecting website performance. Many browser allows 4 KB per cookies, but we can store like 5 MB of data in web storage with sending to server. Date stored in web storage will be key value pair. The key and the value are always string.</p>
+            </section>
+            <section>
+                <p>JavaScript can easily access the web storage which increment the best performance for the website more than traditional server-side and relation database. There are two types of web storage object available</p>
+                <ul>
+                    <li>sessionStorage</li>
+                    <li>localStorage</li>
+                </ul>
+                <h3>Difference between localStorage and sessionStorage</h3>
+                <p>Local storage is similar to session storage but without expiring time, but session storage data will be cleared whenever the tab is closed or browser is closed. date stored in website either local storage or session storage based the protocol of the web page.</p>
+            </section>
+            <section>
+                <h3>sessionStorage</h3>
+                <p>sessionStorage only available within the browser tab or window. Whenever the tab is closed the session storage data will be deleted.</p>
+                <h3>localStorage</h3>
+                <p>This allows to store data locally without expiring time. Data will be available in the browser even after the window or browser is closed. localStorage kept even between storage which means data stored in edge can not be access using chrome.</p>
+            </section>
+        </article>
+        <article>
+            <section>
+                <h2>Use case of web storage</h2>
+                <ul>
+                    <li>store data temporarily</li>
+                    <li>save product that you added in your shopping cart</li>
+                    <li>can be used for user authentication method</li>
+                    <li>and so on.. check the <a href="https://github.com/Asabeneh/30-Days-Of-JavaScript/blob/master/17_Day_Web_storages/17_day_web_storages.md" target="_blank">document</a></li>
+                </ul>
+            </section>
+        </article>
+        <article>
+            <section>
+                <h2>Local Storage Methods</h2>
+                <ul>
+                    <li>.setItem()</li>
+                    <li>.getItem()</li>
+                    <li>.removeItem()</li>
+                    <li>.clear()</li>
+                    <li>.key()</li>
+                </ul>
+            </section>
+            <section>
+                <h2>HTML5 Web Storage Object</h2>
+                <p>HTML5 provides two object to store data on the client</p>
+                <ul>
+                    <li>window.localStorage - store data with no expiring date / time.</li>
+                    <li>window.sessionStorage - store date with expiring time.</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Web storage objects</h3>
+                <ul>
+                    <li>localStorage - display local storage object</li>
+                    <li>localStorage.clear() - to remove everything in local storage</li>
+                    <li>localStorage.setItem() - to store date in local storage, it takes key and value parameter</li>
+                    <li>localStorage.getItem() - to display data stored in the local storage, it takes key as a parameter</li>
+                    <li>localStorage.removeItem() - to remove stored item from the local storage, it takes key as a parameter</li>
+                    <li>localStorage.key() - to display data store in a localStorage, it takes index a parameter</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <script src="17_web_storages.js"></script>
+    </footer>
+</body>
+</html>
