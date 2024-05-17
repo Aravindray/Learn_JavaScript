@@ -1,14 +1,14 @@
 // Promise
 
 /*
-Promise a way to handle asynchronous function, It return the even the success value or failed reason. This let asynchronous function like synchronous function instead of return the value the immediately it return the promise in 3 states:
+Promise a way to handle asynchronous function, It return the even the success value or failed reason. This asynchronous function like synchronous function instead of return the value the immediately it return the promise in 3 states:
 
 1. Pending - Initial State either resolved or reject
 2. fulfilled / resolve - Completed state
 3. reject - Failed state with reason
 
 
-promise.prototype.then() and promise.prototype.cache() methods return promise
+promise.then() and promise.cache() methods return promise
 */
 
 // Callback
@@ -108,7 +108,7 @@ setTimeout(() => {
 }, 14000);
 
 const square = async function (n) {
-    return n * n
+    return await n * n
 }
 
 setTimeout(() => {
