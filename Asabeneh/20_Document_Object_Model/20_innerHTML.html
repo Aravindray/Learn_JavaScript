@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning JavaScript : DOM</title>
+    <link rel="icon" href="../../assets/JS_logo.ico">
+</head>
+<body>
+    <h1>JavaScript DOM</h1>
+    <div class="wrapper-1">
+        <h2>Adding child element using innerHTML</h2>
+        <h3>Heading 3</h3>
+        <ul class="ul-1"></ul>
+    </div>
+    <div class="wrapper-2">
+        <h2>Removing Child Element using innerHTML instead of removeChild()</h2>
+        <h3>Heading 3</h3>
+        <ul class="ul-2">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+            <li>Item 6</li>
+        </ul>
+    </div>
+    <script>
+        let listItems = `
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+            <li>Item 6</li>
+            <li>Item 7</li>`
+        const ul_1 = document.getElementsByClassName('ul-1')
+        ul_1[0].innerHTML = listItems
+        const ul_2 = document.querySelector('.ul-2')
+        ul_2.innerHTML = ''
+    </script>
+    <footer>
+        <p><a href="20_dom.html">DOM Example</a></p>
+    </footer>
+</body>
+</html>

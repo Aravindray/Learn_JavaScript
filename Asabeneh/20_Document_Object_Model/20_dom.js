@@ -167,3 +167,74 @@ selectedElement.classList.remove('removeClassName')
 
 let removeUsingClassList = document.querySelectorAll('h3')
 removeUsingClassList[3].classList.remove('title')
+
+// Adding Text to  HTML Element
+
+/*
+An HTML is the build block of an opening tag, a closing tag and a text content. We can add text content 
+using the property textContent or *innerHTML
+*/
+
+// Adding Text Content using TextContent
+
+/*
+TextContent Property is used to add text to an HTML element. This property add text to HTML Element.
+
+let selectElement = document.querySelectorAll('h3')
+selectElement.textContent = 'Hello, World!'
+*/
+
+let addTextContent = document.querySelectorAll('h3')
+addTextContent[3].textContent = 'Fourth Title'
+
+// Adding Text Content Using innerHTML
+
+/*
+Inner HTML can be used to add text, HTML element, or elements as a child.
+We use Inner HTML to replace or add completely new children content to the parent element. IT value we 
+assign is going to be string of the HTML element.
+*/
+
+// check 20_innerHTML.html
+
+// Adding Style
+
+console.log('Adding Style Color')
+
+let addStyleColor = document.querySelectorAll('h3')
+addStyleColor.forEach((element, i)=> {
+    element.style.fontSize = '24px'
+    if (i % 2 === 0) {
+        element.style.color = 'green'
+    }
+    else {
+        element.style.color = 'red'
+    }
+})
+
+console.log('Adding Style Background Color')
+
+let addStyleBackgroundColor = document.querySelectorAll('h3')
+addStyleBackgroundColor.forEach((ele, i) => {
+    ele.style.fontSize = '24px'
+    if (i % 2 === 0) {
+       ele.style.backgroundColor = 'green'
+       ele.style.color = 'white' 
+    }
+    else {
+        ele.style.backgroundColor = 'red'
+        ele.style.color = 'white'
+    }
+})
+
+console.log('Adding Style Font Size')
+
+let addStyleFontSize = document.querySelectorAll('h3')
+addStyleFontSize.forEach((ele, i) => {
+    if (i % 2 === 0) {
+        ele.style.fontSize = '20px'
+    }
+    else {
+        ele.style.fontSize = '30px'
+    }
+})
