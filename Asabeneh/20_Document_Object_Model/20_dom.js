@@ -98,3 +98,72 @@ for (let i = 0; i < selectTagUsingQSA.length; i++) {
 selectTagUsingQSA.forEach(title => console.log(title))
 
 // Adding Attributes
+
+console.log('Adding Attributes')
+
+/*
+An attributes added in the opening tag of HTML element, a common attributes we add are id, class, src, style, href, disables, title, alt.
+*/
+
+// Adding attributes using setAttribute
+
+console.log('Adding attributes using setAttribute')
+
+/*
+setAttribute() method sets any HTML attribute. It takes 2 parameters type of attribute and value of 
+attributes.
+*/
+
+let title = document.querySelectorAll('h3')
+title[3].setAttribute('class', 'title')
+title[3].setAttribute('id','fourth-title')
+
+// Adding attributes without setAttribute
+
+console.log('Adding attributes without setAttribute')
+
+/*
+This method can "not" work for all element. some attribute are DOM object property and they can be set 
+directly.
+
+Syntax:
+
+document.querySelectorAll('tagName')
+index the element
+selectedElement.className = 'new-class-name'
+selectedElement.id = 'id-name'
+*/
+
+let titleWithOut = document.querySelectorAll('h3')
+titleWithOut[3].className = 'title'
+titleWithOut[3].id = 'fourth-title'
+
+// Adding class using classList
+
+console.log('Adding class using classList')
+
+/*
+This is the good method to add class, because it did not overwrite the old class, except it add / append new 
+class in the selected element(s).
+
+Syntax:
+
+selectedElement.classList.add('newClassName-1', 'newClassName-2')
+*/
+
+let usingClassList = document.querySelectorAll('h3')
+usingClassList[3].classList.add('title')
+usingClassList[3].classList.add('header-title')
+
+// Removing class using remove
+
+/*
+Similar to adding we can also remove class from an element. we can remove specific class from an element.
+
+Syntax:
+
+selectedElement.classList.remove('removeClassName')
+*/
+
+let removeUsingClassList = document.querySelectorAll('h3')
+removeUsingClassList[3].classList.remove('title')
