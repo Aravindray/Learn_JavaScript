@@ -2,6 +2,8 @@
 
 console.log('// Level 1')
 
+console.log('---Question 1---')
+
 let firstName = 'Aravind'
 let lastName = 'ray'
 let planet = 'Earth'
@@ -9,9 +11,6 @@ let city = 'Salem'
 let age = 24
 let isMarried = false
 let bornYear = 1999
-
-console.log('---Question 1---')
-
 console.log('typeof firstName //',typeof firstName)
 console.log('typeof lastName //',typeof lastName)
 console.log('typeof planet //',typeof planet)
