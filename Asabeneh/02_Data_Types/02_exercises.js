@@ -101,56 +101,75 @@ console.log('\"Love is not patronizing and charity isn\'t about pity, it is abou
 console.log('---Question 3---')
 console.log(typeof +'10')
 
+console.log('---Question 4---')
 console.log(Math.ceil(parseFloat('9.8')))
-console.log()
+
+console.log('---Question 5---')
 let py = 'Python'
 let ja = 'Jargon'
 console.log(py.includes('on'))
 console.log(ja.includes('on'))
-console.log()
+
+console.log('---Question 6---')
 let phrase = 'I hope this course is not full of jargon'
 console.log(phrase.includes('jargon'))
-console.log()
+
+console.log('---Question 7---')
 console.log('Let\'s generate a random numbers between 0 to 100 inclusively')
 console.log(Math.floor(Math.random() * 101))
+
+console.log('---Question 8---')
 console.log('Let\'s generate a random numbers between 50 to 100 inclusively')
-console.log(Math.floor(Math.random() * (100 - 50 + 1)) + 50)
+console.log(Math.floor(Math.random() * 51) + 50)
+
+console.log('---Question 9---')
 console.log('Let\'s generate a random numbers between 0 to 255 inclusively')
 console.log(Math.floor(Math.random() * 256))
-console.log()
+
+console.log('---Question 10---')
 let js = 'JavaScript'
-let randomIndex = Math.floor(Math.random() * 10)
+let randomIndex = Math.floor(Math.random() * js.length)
 console.log('Random Generated Character in JavaScript is:',js.charAt(randomIndex))
-console.log()
+
+console.log('---Question 11---')
 console.log('1\t1\t1\t1\t1')
 console.log('2\t1\t2\t4\t8')
 console.log('3\t1\t3\t9\t27')
 console.log('4\t1\t4\t16\t64')
 console.log('5\t1\t5\t25\t125')
-console.log()
-let newPhrase = 'You cannot end a sentence with because because because is a conjunction'
-console.log('newPhrase Slice',newPhrase.substr(31, 23))
-console.log()
-console.log('----End of Level 2----')
-console.log()
+
+console.log('---Question 12---')
+let findLength = 'because'
+let startIndex = because.indexOf('because')
+let endIndex = because.lastIndexOf('because')
+console.log(because.substring(startIndex, endIndex + findLength.length))
+
 
 // Level 3
 
+console.log('Level 3')
+
+console.log('---Question 1---')
 let love = 'Love is the best thing in this world. Some found their love and some are still looking for their love.'
 let loveCount = love.match(/Love/gi)
 console.log(loveCount)
 console.log('Count of love is',loveCount.length)
-let becauseCount = newPhrase.match(/because/gi)
+
+console.log('---Question 2---')
+let becauseCount = because.match(/because/gi)
 console.log(becauseCount)
 console.log('Count of because is',becauseCount.length)
-console.log()
 
-// Not solved Questions
-
-/*
-3. Clean the following text and find the most frequent word (hint, use replace and regular expressions).
-
+console.log('---Question 3---')
 const sentence = '%I $am@% a %tea@cher%, &and& I lo%#ve %te@a@ching%;. The@re $is no@th@ing; &as& mo@re rewarding as educa@ting &and& @emp%o@weri@ng peo@ple. ;I found tea@ching m%o@re interesting tha@n any ot#her %jo@bs. %Do@es thi%s mo@tiv#ate yo@u to be a tea@cher!? %Th#is 30#Days&OfJavaScript &is al@so $the $resu@lt of &love& of tea&ching'
 
-4. Calculate the total annual income of the person by extracting the numbers from the following text. 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
-*/
+console.log(sentence.replace(/[^0-9a-zA-Z\s\.]/g,''))
+
+console.log('---Question 4---')
+let calculateIncome = 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
+let amounts = calculateIncome.match(/[0-9]+/g)
+let salaryPerMonth = Number(amounts[0]) * 12
+let bouns = Number(amounts[1])
+let onlineEarnPerMonth = Number(amounts[2]) * 12
+let annualIncome = salaryPerMonth + bouns + onlineEarnPerMonth
+console.log(annualIncome)
