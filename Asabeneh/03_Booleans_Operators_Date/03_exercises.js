@@ -81,39 +81,14 @@ console.log()
 // Level 2
 
 console.log('// Level 2')
-/*
-console.log('---Question 1---')
-
-let base = prompt('Enter the base of the triangle:')
-let height = prompt('Enter the height of the triangle:')
-let areaTriangle = 0.5 * +base * +height
-alert(`Entered base is ${base}cm and height is ${height}cm and area of triangle is ${areaTriangle}cm`)
-
-console.log('---Question 2---')
-
-let a = prompt('Enter the side a of the triangle:')
-let b = prompt('Enter the side b of the triangle:')
-let c = prompt('Enter the side c of the triangle:')
-let perimeterTriangle = +a + +b + +c
-alert(`The perimeter of the triangle is ${perimeterTriangle}`)
-
-console.log('---Question 3---')
-
-let length = prompt('Enter the length of the rectangle:')
-let width = prompt('Enter the width of the rectangle:')
-alert(`The area of rectangle is ${+length * +width}`)
-alert(`The perimeter of rectangle is ${2 * (+length + +width)}`)
-
-console.log('---Question 4---')
-const PI = 3.14
-let radius = prompt('Enter the radius of the circle:')
-alert(`Area of the circle is ${PI * +radius * +radius}`)
-alert(`Circumference of the circle is ${2 * PI * +radius}`)
 
 console.log('---Question 5---')
 
-Calculate the slope, x-intercept and y-intercept of y = 2x -2
-*/
+let x
+let y = 2 * x - 2 // The equation is already in form of y = mx + b
+let slope_1 = 2 // The coefficient of x in the equation is 2 so 2 is the slope
+let yIntercept = '(0, -2)' // The constant term represent y intercept
+let XIntercept = '(1, 0)' // If we assign y = 0 the x intercept will be calculate
 
 console.log('---Question 6---')
 
@@ -123,23 +98,17 @@ let x2 = 6
 let y2 = 10
 
 let slope = (y2 - y1) / (x2 - x1)
-
 console.log('Slope is',slope)
 
-// console.log('---Question 7---') Compare the slope of above two questions.
+console.log('---Question 7---') //  Compare the slope of above two questions.
+
+console.log('Both slope are same because the result is 2')
 
 console.log('---Question 8---')
-let x = -3
-let y = x ** 2 + 6 * x + 9
-console.log(`x is ${x} and y is ${y}`)
 
-/*
-console.log('---Question 9---')
-
-let hours = prompt('Enter the hours:')
-let rate = prompt('Enter the rate per hour:')
-alert(`Rate per hour is ${rate} and worked hours is ${hours} so you earned ${+hours * +rate}`)
-*/
+let X = -3
+let Y = X ** 2 + 6 * X + 9
+console.log(`X is ${X} and Y is ${Y}`)
 
 console.log('---Question 10---')
 
@@ -156,20 +125,6 @@ let myAge = 250
 let yourAge = 25
 
 myAge > yourAge ? console.log(`I am ${myAge - yourAge} years older than you.`) : console.log(`I am ${yourAge - myAge} years younger than you.`)
-
-console.log('---Question 13---')
-
-// let birthYear = prompt('Enter your born year:')
-let birthYear = 1999
-let currentYear = new Date().getFullYear()
-
-currentYear - birthYear < 18 ? console.log(`You are ${currentYear - birthYear}. You will be allowed to drive after ${18 - (currentYear - birthYear)} years.`) : console.log(`You are ${currentYear - birthYear}. You are old enough to drive`)
-
-console.log('---Question 14---')
-
-// let year = prompt('Enter no of years you live:')
-let yearLive = 100
-console.log(`You lived ${yearLive * 31536000} seconds`)
 
 console.log('---Question 15---')
 
