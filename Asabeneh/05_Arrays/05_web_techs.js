@@ -1,4 +1,4 @@
-const webTechs = [
+export const webTechs = [
     'HTML',
     'CSS',
     'JavaScript',
@@ -8,6 +8,10 @@ const webTechs = [
     'MongoDB'
 ]
 
+console.log('Level 2')
+
+console.log('---Question 5---')
+
 if (webTechs.includes('Sass')) {
     console.log('Sass is a CSS preprocess')
 }
@@ -16,5 +20,3 @@ else {
     console.log('Sass added into the list')
     console.log(webTechs)
 }
-
-// export default webTechs

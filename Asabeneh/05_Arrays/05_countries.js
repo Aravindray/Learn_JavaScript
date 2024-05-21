@@ -1,4 +1,4 @@
-const countries = [
+export const countries = [
     'Afghanistan',
     'Albania',
     'Algeria',
@@ -194,6 +194,10 @@ const countries = [
     'Zimbabwe'
 ]
 
+console.log('Level 2')
+
+console.log('---Question 4---')
+
 if (countries.includes('Ethiopia')) {
     let indexOfEthiopia = countries.indexOf('Ethiopia')
     console.log(countries[indexOfEthiopia].toUpperCase())
@@ -202,8 +206,6 @@ else {
     countries.push('Ethiopia')
     console.log('Ethiopia added in the list')
 }
-
-// export default countries;
 
 // Level 3
 

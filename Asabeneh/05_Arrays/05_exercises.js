@@ -72,22 +72,32 @@ console.log(`${companies.slice(0,companies.length-1).join(', ')} and ${companies
 
 console.log('---Question 13---')
 
-let isAvailable = companies.includes('Amazon')
+let checkCompany = 'Amazon'
+let isAvailable = companies.includes(checkCompany)
 
 if (isAvailable) {
-    console.log('Yes Company is Available')
+    console.log(checkCompany)
 }
 else {
     console.log('Not found')
 }
 
-// console.log('---Question 14---')
+console.log('---Question 14---')
 
-// Filter out companies which have more than one 'o' without the filter method
+let result = []
+companies.forEach(company => {
+    let temp = company.match(/o/gi)
+    if (temp !== null && temp.length > 1) {
+        result.push(company)
+    }
+})
+console.log(result)
 
 console.log('---Question 15---')
 
 console.log(companies.sort())
+
+// Question 16 is after the question 19
 
 console.log('---Question 17---')
 
@@ -155,7 +165,7 @@ console.log('After',itCompanies)
 
 console.log('---Level 2---')
 
-// console.log('---Question 1---') - Check main file for more info - Not able to complete it
+// console.log('---Question 1---') - Check main file for more info
 
 console.log('---Question 2---')
 
@@ -230,9 +240,11 @@ ages.sort()
 
 console.log('Sorted ages',ages)
 
-console.log('1.1.a - Minimum Age', ages[0])
+let minAge = ages[0]
+console.log('1.1.a - Minimum Age', minAge)
 
-console.log('1.1.b - Maximum Age', ages[ages.length - 1])
+let maxAge = ages[ages.length - 1]
+console.log('1.1.b - Maximum Age', maxAge)
 
 if (ages.length % 2 === 0) {
     let median = (ages[ages.length / 2 - 1] + ages[ages.length / 2]) / 2
@@ -243,8 +255,23 @@ else {
     console.log('1.2 - Median',median)
 }
 
-// 1.3 Not able to sum all the element in an array
+let sum = 0
+for (const age of ages) {
+    sum += age
+}
+let average = sum / ages.length
+console.log(`1.3 - Average Age ${average}`)
 
 console.log(`1.4 Ages range - maximum is ages ${ages[ages.length - 1]} and minimum is ${ages[0]} and range is ${ages[ages.length - 1] - ages[0]}`)
 
-// 1.5 Not able to solve, because need a solution to find the average ages
+let minAverage = Math.abs(minAge - average)
+let maxAverage = Math.abs(maxAge - average)
+
+if (minAverage === maxAverage) {
+    console.log(`Min Average ${minAverage} is equal to Max Average ${maxAverage}`)
+}
+else {
+    console.log(`Min Average ${minAverage} is not equal to Max Average ${maxAverage}`)
+}
+
+(minAverage > maxAverage) ? console.log(`Min Average ${minAverage} is greater than Max Average ${maxAverage}`) : console.log(`Max Average ${maxAverage} is greater than Min Average ${minAverage}`)
