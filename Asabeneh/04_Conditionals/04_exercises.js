@@ -2,28 +2,6 @@
 
 console.log('// Level 1')
 
-console.log('---Question 1---')
-
-// let age = prompt('Enter your age')
-let age = 14 
-if (age < 18) {
-    console.log(`You are left with ${18 - age} years to drive`)
-}
-else {
-    console.log('You are old enough to drive')
-}
-
-console.log('---Question 2---')
-
-let myAge = 24 // prompt('Enter your age')
-let yourAge = 14 // prompt('Enter comparison age')
-if (yourAge > myAge) {
-    console.log(`You are ${yourAge - myAge} years older than me.`)
-}
-else {
-    console.log(`I am ${myAge - yourAge} older than you.`)
-}
-
 console.log('---Question 3---')
 
 let a = 4
@@ -42,7 +20,7 @@ a > b ? console.log(`${a} is greater than ${b}`) : console.log(`${b} is greater 
 
 console.log('---Question 4---')
 
-let enterNumber = 9 // prompt('Enter the number')
+let enterNumber = 9
 if ((enterNumber % 2) === 0) {
     console.log(`${enterNumber} is an even number`)
 }
@@ -58,7 +36,7 @@ console.log('// Level 2')
 
 console.log('---Question 1---')
 
-let mark = 101 // prompt('Enter the scores')
+let mark = 101
 
 if (mark >= 90 && mark <= 100) {
     console.log(`You got an "A" grade | ${mark} out of 100`)
@@ -81,7 +59,7 @@ else {
 
 console.log('---Question 2---')
 
-let month = 'may' // prompt('Enter the month name')
+let month = 'may'
 
 month = month.toLowerCase()
 
@@ -103,7 +81,7 @@ else {
 
 console.log('---Question 3---')
 
-let day = 'TuEsDaY' // prompt('Enter the day')
+let day = 'TuEsDaY'
 day = day.toLowerCase()
 
 if (day === 'saturday' || day === 'sunday') {
@@ -120,7 +98,7 @@ console.log("// Level 3")
 
 console.log('---Question 1 & 2---')
 
-let monthDays = 'Aravind' // prompt('Enter the month name')
+let monthDays = 'augUst'
 let year = 2024
 let elseMonth = monthDays
 monthDays = monthDays.toLowerCase()
