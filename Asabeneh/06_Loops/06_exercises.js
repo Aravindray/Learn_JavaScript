@@ -86,7 +86,22 @@ for (let a_8 = 0; a_8 <= 100; a_8++) {
     }
 }
 
-// console.log('---Question 9---') Find the first 100 prime number
+console.log('---Question 9---')
+
+let primeNumbers = [2]
+for (let i = 3; i <= 100; i++) {
+    let sqrt = Math.sqrt(i) + 1
+    for (let j = 2; j <= sqrt; j++) {
+        if ((i % j) === 0) {
+            break
+        }
+        else {
+            primeNumbers.push(i)
+            console.log(i)
+            break
+        }
+    }
+}
 
 console.log('---Question 10---')
 
@@ -179,15 +194,15 @@ console.log(`rgb(${rgb[0]},${rgb[1]},${rgb[2]})`)
 
 const countries = [
     'Albania',
-    'Bolivia',
-    'Canada',
     'Denmark',
+    'Canada',
     'Ethiopia',
+    'Bolivia',
+    'Ireland',
     'Finland',
+    'Japan',
     'Germany',
     'Hungary',
-    'Ireland',
-    'Japan',
     'Kenya'
 ]
 
@@ -360,6 +375,8 @@ for (const stack of fullStack) {
 }
 
 console.log('// Level 3')
+
+// Question 1, 2, 4 - 9 available in 06_countries.js file
 
 console.log('---Question 3---')
 
