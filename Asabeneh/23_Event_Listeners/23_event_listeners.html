@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning JavaScript - DOM : Event Listeners</title>
+    <link rel="icon" href="../../assets/JS_logo.ico">
+</head>
+<body>
+    <header>
+        <h1>DOM : Event Listeners</h1>
+    </header>
+    <main>
+        <article>
+            <section>
+                <h2>Event Listeners</h2>
+                <p>Common HTML events are onClick, onChange, onmouseover, onmouseout, onkeydown, onkeyup, onload. We can add event listeners to any DOM elements with the help of <code>addEventListener()</code> method to listen different types of events. <code>addEventListener()</code> method takes two arguments event listeners and callback function.</p>
+                <p>To attach the even listeners we <b>first select the element</b> and then add the event listener method with event type and callback function.</p>
+                <code>
+                    <h3>Syntax</h3>
+                    selectedElement.addEventListener('onClick', (e) => {
+                        // code
+                    }) 
+                </code>
+            </section>
+            <section>
+                <h2>Single Click</h2>
+                <button class="first-button">Click Me</button>
+                <script>
+                    let button1 = document.querySelector('.first-button')
+                    button1.addEventListener('click', e => {
+                        console.log('e gives the event listener objects', e)
+                        console.log('e.target gives the selected element', e.target)
+                        console.log('e.target.textContent gives the text content of selected element', e.target.textContent)
+                    })
+                </script>
+                <br>
+                <br>
+                <details>
+                    <summary>Do you know?</summary>
+                    <p>Events can be attached directly to HTML element as inline script.</p>
+                    <button class="second-button" onclick="clickMe()">Click Me</button>
+                    <script>
+                        const clickMe = () => {
+                            alert('We can attach event on HTML Elements')
+                        }
+                    </script>
+                </details>
+            </section>
+            <section>
+                <h2>Double Click ◬⊗⋊⨷Seems Not Working⨻⨵⩐⫷</h2>
+                <p>Double Click type event is described as <b>dblclick</b></p>
+                <button class="third-button">Click Me Twice</button>
+                <script>
+                    let button2 = document.querySelector('.third-button')
+                    button2.addEventListener('dblClick', e => {
+                        console.log('e',e)
+                        console.log('e.target',e.target)
+                        console.log('e.target.textContent',e.target.textContent)
+                        button2.style.backgroundColor = 'red'
+                    })
+                </script>
+            </section>
+            <section>
+                <h2>Mouse Enter 🍸🍩🥧Need More Clarification🦪🌭🧂</h2>
+                <p>Event type: <b>mouseenter</b></p>
+                <button class="fourth-button">Click Me by Mouse</button>
+                <script>
+                    let button3 = document.querySelector('.fourth-button')
+                    button3.addEventListener('mouseenter', e => {
+                        console.log(e.target.textContent) // It display on if the button clicked by mouse
+                    })
+                </script>
+            </section>
+        </article>
+    </main>
+</body>
+</html>
