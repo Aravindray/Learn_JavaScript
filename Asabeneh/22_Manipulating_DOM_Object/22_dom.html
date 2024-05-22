@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning JavaScript - Manipulating DOM Objects</title>
+    <link rel="icon" href="../../assets/JS_logo.ico">
+</head>
+<body>
+    <header>
+        <h1>Manipulating DOM Object</h1>
+    </header>
+    <main>
+        <article>
+            <section>
+                <h2>Creating an Element</h2>
+                <p>Creating an HTML element is simple, creating an HTML element using JavaScript is very straight forward. To create a HTML element we use <code>document.createElement('tagName')</code>.It takes tag name as a string parameter.</p>
+                <code>
+                    <h3>Syntax:</h3>
+                    document.createElement('tagName')
+                </code>
+                <script>
+                    let createNewElement = document.createElement('h2')
+                    createNewElement.class = 'new-header'
+                    createNewElement.style.color = 'white'
+                    createNewElement.style.backgroundColor = 'green'
+                    createNewElement.style.fontSize = '24px'
+                    createNewElement.textContent = 'I am new Header'
+                    console.log(createNewElement)
+                </script>
+            </section>
+            <section>
+                <h2>Creating Multiple Elements</h2>
+                <p>To create multiple elements we use loop, after element create we can assign values to different properties of the HTML object.</p>
+                <script>
+                    let addSomethingNew
+                    for (let i = 0; i < 3; i++) {
+                        addSomethingNew = document.createElement('h2')
+                        addSomethingNew.textContent = i
+                        addSomethingNew.style.fontSize = '24px'
+                        console.log(addSomethingNew)
+                    }
+                </script>
+            </section>
+            <section>
+                <h2>Appending child to parent element</h2>
+                <p>To see the created element on the HTML document we should append it to the parent element. To append the element to HTML body we use <code>document.body</code> which supports <code>append.child()</code> method.</p>
+                <script>
+                    // Fist append footer element to body
+                    let footer = document.createElement('footer')
+                    document.body.appendChild(footer)
+                    footer.textContent = 'I am a footer content'
+                    footer.style.fontSize = '24px'
+                    footer.style.color = 'white'
+                    footer.style.backgroundColor = 'red'
+                </script>
+            </section>
+            <section>
+                <h2>Removing a child from a parent node easy method</h2>
+                <p>To remove a element or elements from a parent element we could use <code>removeChild()</code> method, but let's remove it in easy way with <code>innerHTML</code> is equal to null.</p>
+                <ul class="parent-ul">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                </ul>
+                <script>
+                    let parent = document.querySelector('.parent-ul')
+                    parent.innerHTML = ''
+                </script>
+            </section>
+        </article>
+    </main>
+</body>
+</html>
