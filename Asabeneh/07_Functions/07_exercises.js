@@ -169,15 +169,53 @@ console.log(findMax(num1, num2, num3))
 
 console.log('// Level 2')
 
-/*
 console.log('---Question 1---')
 
-function solveLinEquation() {
-
+function solveLinEquation(a, b, c) {
+    // ax + by + c = 0
+    let slope
+    let yIntercept
+    // y = mx + c -> where m is slope and c is y-intercept
+    if (a === 0) {
+        return `a can not be zero`
+    }
+    slope = (-a / b).toFixed(3)
+    yIntercept = c / b
+    return [slope, yIntercept]
 }
+let [slope, yIntercept] = solveLinEquation(2, 3, 6)
+console.log(slope)
+console.log(yIntercept)
 
 console.log('---Question 2---')
-*/
+
+function solveQuadEquation(a, b, c) {
+    // formula (root1, root2) = (-b ± √b²-4ac) / 2
+    if (a === 0) {
+        return 'a can not be zero'
+    }
+    let root
+    let root1
+    let root2
+    let discriminant = (b ** 2) - 4 * a * c
+    if (discriminant > 0) {
+        root1 = (-b + Math.sqrt(discriminant)) / (2 * a)
+        root2 = (-b - Math.sqrt(discriminant)) / (2 * a)
+        return {root1, root2}
+    }
+    else if (discriminant === 0) {
+        root = -b / (2 * a)
+        return {root}
+    }
+    else {
+        let realPart = (-b / (2 * a)).toFixed(2)
+        let imgPart = (Math.sqrt(-discriminant) / (2 * a)).toFixed(2)
+        root1 = `${realPart} + i${imgPart}`
+        root2 = `${realPart} - i${imgPart}`
+        return {root1, root2}
+    }
+}
+console.log(solveQuadEquation(1, -1, 0))
 
 console.log('---Question 3---')
 
@@ -247,8 +285,28 @@ function capitalizedArray(arr) {
 let countries = ['America', 'United Kingdom', 'China', 'Finland', 'Canada']
 console.log(capitalizedArray(countries))
 
-// console.log('---Question 8---') - Need clarity
-// console.log('---Question 9---') - Need clarity
+console.log('---Question 8---')
+
+let arraysEight = []
+
+function addItem(value) {
+    arraysEight.push(value)
+    return arraysEight
+}
+console.log(addItem(4))
+
+console.log('---Question 9---')
+
+let arraysNine = ['Aravind','James', 'Asabeneh','Mark', 'Jim', 'Elon']
+
+const removeItem = (index) => {
+    if (index >= arraysNine.length) {
+        return 'Index Out of Range'
+    }
+    arraysNine.splice(index, 1)
+    return arraysNine
+}
+console.log(removeItem(3))
 
 console.log('---Question 10---')
 
