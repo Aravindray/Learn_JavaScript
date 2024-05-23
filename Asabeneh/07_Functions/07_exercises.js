@@ -479,8 +479,30 @@ const arraysOfRgbColors = (noOfElements) => {
 }
 console.log(arraysOfRgbColors(6))
 
-// console.log('---Question 5---')
-// console.log('---Question 6---')
+console.log('---Question 5---')
+
+function convertHexToRgb(hex) {
+    hex = hex.replace('#','')
+    if (hex.length > 6) {
+        return `Invalid Input`
+    } else {
+        let one = parseInt(hex.substring(0,2),16)
+        let two = parseInt(hex.substring(2,4),16)
+        let three = parseInt(hex.substring(4),16)
+        return `rgb(${one},${two},${three})`
+    }
+}
+console.log(convertHexToRgb('#FFFFFF'))
+
+console.log('---Question 6---')
+
+function convertRgbToHex(r,g,b) {
+    let one = r.toString(16)
+    let two = g.toString(16)
+    let three = b.toString(16)
+    return `#${one}${two}${three}`
+}
+console.log(convertRgbToHex(255,16,16))
 
 console.log('---Question 7---')
 
@@ -527,4 +549,203 @@ function factorial(number) {
     }
     return result
 }
-console.log(factorial(1))
+console.log(factorial(3))
+
+console.log('---Question 10---')
+
+function isEmpty(value) {
+    if (typeof value === 'object') {
+        if (Object.keys(value).length === 0) {
+            return true
+        } else {
+            return false
+        }
+    } else if (typeof value === 'string') {
+        if (value === '') {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
+let someObj = {}
+let someArray = [1,3]
+let someStr = ''
+let someSpaceStr = ' '
+let someMap = new Map()
+let someSet = new Set()
+
+console.log('Doubts')
+console.log('typeof someArray -',typeof someArray)
+console.log('typeof someStr -',typeof someStr)
+console.log('someStr.length -',someStr.length)
+console.log('typeof someSpaceStr -',typeof someSpaceStr)
+console.log('someSpaceStr.length -',someSpaceStr.length)
+console.log('typeof someMap -',typeof someMap)
+console.log('typeof someSet -',typeof someSet)
+console.log()
+console.log('isEmpty')
+console.log(isEmpty(someObj))
+console.log(isEmpty(someArray))
+console.log(isEmpty(someStr))
+console.log(isEmpty(someSpaceStr))
+console.log(isEmpty(someMap))
+console.log(isEmpty(someSet))
+
+console.log('---Question 11---')
+
+const sum = (...arg) => {
+    let sum = 0
+    arg.forEach(value => {
+        sum += value
+    })
+    return sum
+}
+console.log(sum(1,2,23,65,332,457,5434,1434,64345,12))
+
+console.log('---Question 12---')
+
+function sumOfArrayItems(arr) {
+    let sum = 0
+    for(let item of arr) {
+        if (typeof item === 'number') {
+            sum += item
+        } else {
+            return `${item} is not a number`
+        }
+    }
+    return sum
+}
+let arrSome = [2, 5, 3, 3, 5, 2, 5, 5, 5, 5]
+console.log(sumOfArrayItems(arrSome))
+
+console.log('---Question 13---')
+
+function average(arr) {
+    let sum = 0
+    let length = arr.length
+    for (let item of arr) {
+        if (typeof item === 'number') {
+            sum += item
+        } else {
+            return `${item} is not a number.`
+        }
+    }
+    return sum / length
+}
+console.log(average(arrSome))
+
+console.log('---Question 14---')
+
+function modifyArray(arr) {
+    if (arr.length >= 5) {
+        arr[4] = arr[4].toUpperCase()
+        return arr
+    }
+    else {
+        return `Item Not Found`
+    }
+}
+console.log(modifyArray(['Avocado', 'Tomato', 'Potato','Mango', 'Lemon','Carrot']))
+console.log(modifyArray(['Google', 'Facebook','Apple', 'Amazon','Microsoft',  'IBM']))
+console.log(modifyArray(['Google', 'Facebook','Apple', 'Amazon']))
+
+console.log('---Question 15---')
+
+const isPrime = (num) => {
+    if (num === 2) {
+        return `${num} is prime number`
+    }
+    let stop = (num / 2) + 1
+    for (let i = 2; i <= stop; i++) {
+        if ((num % i) === 0) {
+            return `${num} is not a prime number`
+        }
+    }
+    return `${num} is a prime number`
+}
+console.log(isPrime(97))
+
+console.log('---Question 16---')
+
+function isUnique(arr) {
+    let arrLength = arr.length
+    let uniqueSet = new Set(arr)
+    let setLength = uniqueSet.size
+    if (arrLength === setLength) {
+        return true
+    }
+    else {
+        return false
+    }
+}
+let uniArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+if (isUnique(arrSome)) {
+    console.log('Yes, all items are unique\n',arrSome)
+}
+else {
+    console.log('No, we have duplicate items\n',arrSome)
+}
+
+console.log('---Question 17---')
+
+function isSameDataType(arr) {
+    let firstDataType = typeof arr[0]
+    for (const item of arr) {
+        if (typeof item === firstDataType) {
+            continue
+        } else {
+            return false
+        }
+    }
+    return true
+}
+console.log(isSameDataType(uniArr))
+console.log(isSameDataType(arrSome))
+console.log(isSameDataType([1, 2, 4, 'a', true]))
+
+console.log('---Question 18---')
+
+function isValidVariable(variableName) {
+    let pattern = /[^\$\w\d]/gi
+    let check = variableName.match(pattern)
+    if (check !== null && check.length > 0) {
+        console.log(`Not a valid variable name`)
+        console.log(`Your variable contains these symbols ${check}`)
+        return false
+    }
+    else {
+        console.log('Yes, it is a valid variable name')
+        return true
+    }
+}
+let someName = 'aravind_ray$#@'
+console.log(isValidVariable(someName))
+
+console.log('---Question 19---')
+
+let randomSeven = []
+
+while (true) {
+    if (randomSeven.length === 7) {
+        break
+    }
+    let randomNum = Math.floor(Math.random() * 10)
+    if (randomSeven.includes(randomNum)) {
+        continue
+    } else {
+        randomSeven.push(randomNum)
+    }
+}
+console.log(randomSeven)
+
+console.log('---Question 20---')
+
+function reverseCountries(arr) {
+    let copiedArr = [...arr]
+    return arr.reverse()
+}
+console.log(countries)
+console.log('After reverse')
+console.log(reverseCountries(countries))
