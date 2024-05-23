@@ -220,3 +220,235 @@ console.log(personAccount.totalIncome())
 console.log(personAccount.totalExpense())
 console.log(personAccount.accountInfo())
 console.log(personAccount.accountBalance())
+
+const newUsers = [
+    {
+        _id: 'ab12ex',
+        username: 'Alex',
+        email: 'alex@alex.com',
+        password: '123123',
+        createdAt: '08/01/2020 9:00 AM',
+        isLoggedIn: false
+    },
+    {
+        _id: 'fg12cy',
+        username: 'Asab',
+        email: 'asab@asab.com',
+        password: '123456',
+        createdAt: '08/01/2020 9:30 AM',
+        isLoggedIn: true
+    },
+    {
+        _id: 'zwf8md',
+        username: 'Brook',
+        email: 'brook@brook.com',
+        password: '123111',
+        createdAt: '08/01/2020 9:45 AM',
+        isLoggedIn: true
+    },
+    {
+        _id: 'eefamr',
+        username: 'Martha',
+        email: 'martha@martha.com',
+        password: '123222',
+        createdAt: '08/01/2020 9:50 AM',
+        isLoggedIn: false
+    },
+    {
+        _id: 'ghderc',
+        username: 'Thomas',
+        email: 'thomas@thomas.com',
+        password: '123333',
+        createdAt: '08/01/2020 10:00 AM',
+        isLoggedIn: false
+    }
+]
+
+console.log('---Question 2.a---')
+
+function checkUsers() {
+    let exitingUsers = []
+    for (const user of newUsers) {
+        exitingUsers.push(user._id)
+    }
+    return exitingUsers
+}
+
+function signUp(obj) {
+    let availableUsers = checkUsers()
+    if(availableUsers.includes(obj._id)) {
+        return `User already exists`
+    } else {
+        newUsers.push(obj)
+        return `User added successfully`
+    }
+}
+
+let newPerson = {
+    _id: 'gr43lk',
+    username: 'Aravind',
+    email: 'aravind@aravind.com',
+    password: '23io34',
+    createdAt: '23/05/2024 09:48 PM',
+    isLoggedIn: true
+}
+
+let newPerson2 = {
+    _id: 'eefamr',
+    username: 'new Aravind',
+    email: 'new.aravind@aravind.com',
+    password: '325dse',
+    createdAt: '23/05/2024 10:23 PM',
+    isLoggedIn: false
+}
+
+console.log(signUp(newPerson))
+console.log(newUsers)
+
+console.log(signUp(newPerson2))
+
+console.log('---Question 2.b---')
+
+function signIn(userId) {
+    for (const user of newUsers) {
+        if(user._id === userId) {
+            user.isLoggedIn = true
+            return `You are signed in!`
+        }
+    }
+    return `User not exist!`
+}
+console.log(signIn('eefamr'))
+console.log(signIn('fg12cw'))
+
+console.log(newUsers)
+
+const products = [
+    {
+        _id: 'eedfcf',
+        name: 'mobile phone',
+        description: 'Huawei Honor',
+        price: 200,
+        ratings: [
+            { userId: 'fg12cy', rate: 5 },
+            { userId: 'zwf8md', rate: 4.5 }
+        ],
+        likes: []
+    },
+    {
+        _id: 'aegfal',
+        name: 'Laptop',
+        description: 'MacPro: System Darwin',
+        price: 2500,
+        ratings: [],
+        likes: ['fg12cy']
+    },
+    {
+        _id: 'hedfcg',
+        name: 'TV',
+        description: 'Smart TV:Procaster',
+        price: 400,
+        ratings: [{ userId: 'fg12cy', rate: 5 }],
+        likes: ['fg12cy']
+    }
+]
+
+console.log('---Question 3.a---')
+
+function checkProducts() {
+    let exitingProducts = []
+    for (const product of products) {
+        exitingProducts.push(product._id)
+    }
+    return exitingProducts
+}
+
+function rateProduct(userId, productId, rate) {
+    let availableUsers = checkUsers()
+    if (availableUsers.includes(userId)) {
+        let availableProducts = checkProducts()
+        if(availableProducts.includes(productId)) {
+            let obj = {userId: userId, rate: rate}
+            for (const product of products) {
+                if (product._id === productId) {
+                    product.ratings.push(obj)
+                    return `Rating added successfully!`
+                }
+            }
+        } else {
+            return `Product not exists!`
+        }
+    } else {
+        return `User not exists!`
+    }
+}
+console.log(rateProduct('zwf8md','aegfal',5))
+
+console.log('---Question 3.b---')
+
+function averageRating() {
+    let avgRatings = []
+    for (const product of products) {
+        let ratingsPerProduct = product.ratings
+        let sum = 0
+        let divideBy = ratingsPerProduct.length
+        for (let rate of ratingsPerProduct) {
+            sum += rate.rate
+        }
+        let average = sum / divideBy
+        let obj = { productName: product.name, average: average}
+        avgRatings.push(obj)
+    }
+    return avgRatings
+}
+
+console.log(averageRating())
+
+console.log('---Question 4---')
+
+function checkUsersNew(userId) {
+    let existingUsers = []
+    for (const user of newUsers) {
+        existingUsers.push(user._id)
+    }
+    return existingUsers.includes(userId)
+}
+
+function checkProductsNew(productId) {
+    let existingProducts = []
+    for (const product of products) {
+        existingProducts.push(product._id)
+    }
+    return existingProducts.includes(productId)
+}
+
+function likeProduct(userId, productId) {
+    if (checkUsersNew(userId)) {
+        if (checkProductsNew(productId)) {
+            for (const product of products) {
+                if (product._id === productId) {
+                    let likes = product.likes
+                    if (likes.includes(userId)) {
+                        likes.splice(likes.indexOf(userId),1)
+                        return `Like Removed!`
+                    }
+                    else {
+                        likes.push(userId)
+                        return `Like Added!`
+                    }
+                }
+            }
+        } else {
+            return `Product not exists`
+        }
+    } else {
+        return `User not exists`
+    }
+}
+
+console.log(likeProduct('fg12cy','aegfal'))
+console.log(likeProduct('fg12cy','aegfal'))
+console.log(likeProduct('gr43lk','eedfcf'))
+for (const product of products) {
+    console.log(product)
+}
