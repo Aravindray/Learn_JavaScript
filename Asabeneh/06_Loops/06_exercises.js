@@ -89,17 +89,19 @@ for (let a_8 = 0; a_8 <= 100; a_8++) {
 console.log('---Question 9---')
 
 let primeNumbers = [2]
+
+const isPrime = (num) => {
+    let stop = Math.floor((num / 2)) + 1
+    for (let i = 2; i <= stop; i++) {
+        if ((num % i) === 0) {
+            return false
+        }
+    }
+    return true
+}
 for (let i = 3; i <= 100; i++) {
-    let sqrt = Math.sqrt(i) + 1
-    for (let j = 2; j <= sqrt; j++) {
-        if ((i % j) === 0) {
-            break
-        }
-        else {
-            primeNumbers.push(i)
-            console.log(i)
-            break
-        }
+    if (isPrime(i)) {
+        primeNumbers.push(i)
     }
 }
 
