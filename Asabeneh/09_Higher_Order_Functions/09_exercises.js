@@ -275,7 +275,15 @@ const statistics = {
     },
 
     freqDist() {
-
+        let uniqueValues = new Set(this.ages)
+        let freDis = []
+        for (const age of uniqueValues) {
+            let result = this.ages.filter(ele => ele === age)
+            let obj = {}
+            obj[age] = result.length
+            freDis.push(obj)
+        }
+        return freDis
     },
 
     sum() {
@@ -298,3 +306,4 @@ console.log('median -',statistics.median())
 console.log('mode -',statistics.mode())
 console.log('variance -',statistics.variance())
 console.log('standardDeviation -',statistics.standardDeviation())
+console.log('freqDist -',statistics.freqDist())
