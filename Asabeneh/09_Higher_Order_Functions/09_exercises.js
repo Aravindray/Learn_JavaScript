@@ -189,4 +189,112 @@ let usingReduce = products.filter(product => typeof product.price === 'number').
 }, 0)
 console.log(usingReduce)
 
-// Question 3 - check countries.js file
+// Question 3 to 7 - check 09_countries.js file
+
+// Level 3
+
+console.log('Level 3')
+
+// Question 1, 2, 3 - check 09_countries_data.js
+
+console.log('---Question 4---')
+
+const statistics = {
+    ages: [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26],
+
+    mean() {
+        let average = this.sum() / this.count()
+        return average
+    },
+
+    median() {
+        this.sort()
+        let length = this.ages.length
+        if (length % 2 === 0) {
+            let firstEle = (this.ages.length / 2) - 1
+            let secondEle = this.ages.length / 2
+            let middle = (this.ages[firstEle] + this.ages[secondEle] ) / 2
+            return middle
+        } else {
+            let middle = Math.floor(this.ages.length / 2)
+            return this.ages[middle]
+        }
+    },
+
+    mode() {
+        let uniqueValues = new Set(this.ages)
+        let value
+        let count = 0
+        for (const age of uniqueValues) {
+            let result = this.ages.filter(ele => ele === age)
+            if (result.length > count) {
+                count = result.length
+                value = age
+            }
+        }
+        let obj = {
+            mode: value,
+            count: count
+        }
+        return obj
+    },
+
+    range() {
+        return this.max() - this.min()
+    },
+
+    variance() {
+        let fistStep = this.ages.map(age => {
+            return (age - this.mean()) ** 2
+        })
+        let secondStep = fistStep.reduce((acc, cur) => acc + cur)
+        let thirdStep = secondStep / this.count()
+        return thirdStep.toFixed(3)
+    },
+
+    standardDeviation() {
+        return Math.sqrt(this.variance()).toFixed(3)
+    },
+
+    min() {
+        this.sort()
+        return this.ages[0]
+    },
+
+    max() {
+        this.sort()
+        return this.ages[this.ages.length - 1]
+    },
+
+    count() {
+        return this.ages.length
+    },
+
+    percentile() {
+
+    },
+
+    freqDist() {
+
+    },
+
+    sum() {
+        return sum = this.ages.reduce((acc, cur) => acc + cur)
+    },
+
+    sort() {
+        this.ages.sort((a, b) => {
+            return a - b
+        })
+    }
+}
+console.log('sum -',statistics.sum())
+console.log('count -',statistics.count())
+console.log('min -',statistics.min())
+console.log('max -',statistics.max())
+console.log('range -',statistics.range())
+console.log('mean -',statistics.mean())
+console.log('median -',statistics.median())
+console.log('mode -',statistics.mode())
+console.log('variance -',statistics.variance())
+console.log('standardDeviation -',statistics.standardDeviation())

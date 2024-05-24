@@ -1,19 +1,19 @@
 const countries = [
     {
-        name: 'Afghanistan',
-        capital: 'Kabul',
-        languages: ['Pashto', 'Uzbek', 'Turkmen'],
-        population: 27657145,
-        flag: 'https://restcountries.eu/data/afg.svg',
-        currency: 'Afghan afghani'
-    },
-    {
         name: 'Åland Islands',
         capital: 'Mariehamn',
         languages: ['Swedish'],
         population: 28875,
         flag: 'https://restcountries.eu/data/ala.svg',
         currency: 'Euro'
+    },
+    {
+        name: 'Afghanistan',
+        capital: 'Kabul',
+        languages: ['Pashto', 'Uzbek', 'Turkmen'],
+        population: 27657145,
+        flag: 'https://restcountries.eu/data/afg.svg',
+        currency: 'Afghan afghani'
     },
     {
         name: 'Albania',
@@ -1995,19 +1995,82 @@ const countries = [
         currency: 'Yemeni rial'
     },
     {
-        name: 'Zambia',
-        capital: 'Lusaka',
-        languages: ['English'],
-        population: 15933883,
-        flag: 'https://restcountries.eu/data/zmb.svg',
-        currency: 'Zambian kwacha'
-    },
-    {
         name: 'Zimbabwe',
         capital: 'Harare',
         languages: ['English', 'Shona', 'Northern Ndebele'],
         population: 14240168,
         flag: 'https://restcountries.eu/data/zwe.svg',
         currency: 'Botswana pula'
+    },
+    {
+        name: 'Zambia',
+        capital: 'Lusaka',
+        languages: ['English'],
+        population: 15933883,
+        flag: 'https://restcountries.eu/data/zmb.svg',
+        currency: 'Zambian kwacha'
     }
 ]
+
+// Level 3
+
+console.log('Level 3')
+
+console.log('---Question 1---')
+
+function sortBy(arr, type) {
+    arr.sort((a,b) => {
+        if (a[type] < b[type]) return -1
+        if (a[type] > b[type]) return 1
+        else return 0
+    })
+}
+// console.log(sortBy(countries, 'name')) 
+
+console.log('---Question 2---')
+
+function mostSpokenLanguages(arr, count) {
+    let finalResult = []
+    let allLanguagesWithDuplicate = []
+    for (const country of arr) {
+        for (const language of country.languages) {
+            allLanguagesWithDuplicate.push(language)
+        }
+    }
+    let uniqueLanguages = new Set(allLanguagesWithDuplicate)
+    for (const lang of uniqueLanguages) {
+        let result = allLanguagesWithDuplicate.filter(language => language === lang)
+        let obj = {
+            language: lang,
+            count: result.length
+        }
+        finalResult.push(obj)
+    }
+    finalResult.sort((a, b) => {
+        if (a.count < b.count) return -1
+        if (a.count > b.count) return 1
+        else return 0
+    })
+    finalResult.reverse()
+    return finalResult.slice(0, count)
+}
+console.log(mostSpokenLanguages(countries, 10))
+console.log(mostSpokenLanguages(countries, 3))
+
+console.log('---Question 3---')
+
+function mostPopulatedCountries(arr, count) {
+    sortBy(arr, 'population')
+    arr.reverse()
+    let result = []
+    for (let i = 0; i < count; i++) {
+        let obj = {
+            country: arr[i].name,
+            population: arr[i].population
+        }
+        result.push(obj)
+    }
+    return result
+}
+console.log(mostPopulatedCountries(countries, 10))
+console.log(mostPopulatedCountries(countries, 3))
