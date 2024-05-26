@@ -58,6 +58,37 @@ console.log(C)
 
 console.log('---Question 2---')
 
-for (let ele of a) {
-    console.log(ele)
+let result = []
+const A = new Set(a)
+const B = new Set(b)
+for (let ele of A) {
+    if(B.has(ele)) {
+        result.push(ele)
+    }
 }
+let setOfResult = new Set(result)
+console.log(setOfResult)
+
+console.log('---Question 3---')
+
+let aMinusB = []
+for (let ele of A) {
+    if (!B.has(ele)) {
+        aMinusB.push(ele)
+    }
+}
+
+let bMinusA = []
+for (let ele of B) {
+    if(!A.has(ele)) {
+        bMinusA.push(ele)
+    }
+}
+
+let setOfAMinusB = new Set(aMinusB)
+let setOfBMinusA = new Set(bMinusA)
+
+console.log(setOfAMinusB)
+console.log(setOfBMinusA)
+
+// Check 10_countries_data.js for Level 3
