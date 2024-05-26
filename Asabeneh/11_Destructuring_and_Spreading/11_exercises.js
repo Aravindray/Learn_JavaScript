@@ -140,3 +140,44 @@ function convertArrayToObject(arr) {
     return result
 }
 console.log(convertArrayToObject(students))
+
+console.log('---Question 4---')
+
+const newStudent = {
+  name: 'David',
+  age: 25,
+  skills: {
+    frontEnd: [
+      { skill: 'HTML', level: 10 },
+      { skill: 'CSS', level: 8 },
+      { skill: 'JS', level: 8 },
+      { skill: 'React', level: 9 }
+    ],
+    backEnd: [
+      { skill: 'Node',level: 7 },
+      { skill: 'GraphQL', level: 8 },
+    ],
+    dataBase:[
+      { skill: 'MongoDB', level: 7.5 },
+    ],
+    dataScience:['Python', 'R', 'D3.js']
+  }
+}
+
+const copiedStudent = Object.assign({}, newStudent)
+
+copiedStudent.skills.frontEnd.push({skill: 'Bootstrap', level: 8}) // 4.a
+
+copiedStudent.skills.backEnd.push({skill: 'Express', level: 9}) // 4.b
+
+copiedStudent.skills.dataBase.push({skill: 'SQL', level: 8}) // 4.c
+
+copiedStudent.skills.dataScience.push('SQL')
+
+let copiedStudentKeys = Object.keys(copiedStudent)
+
+for (const keys of copiedStudentKeys) {
+  console.log(copiedStudent[keys])
+}
+
+console.log(copiedStudent)
