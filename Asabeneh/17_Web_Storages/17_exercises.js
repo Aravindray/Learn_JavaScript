@@ -49,3 +49,74 @@ console.log(studentParse)
 console.log('Level 3')
 
 console.log('---Question 1---')
+
+class PersonAccount {
+    constructor(firstName, lastName, incomes, expenses) {
+        this.firstName = firstName
+        this.lastName = lastName
+        this.incomes = incomes
+        this.expenses = expenses
+    }
+
+    totalIncome() {
+        let totalAmount = 0
+        for (let income of this.incomes) {
+            totalAmount += income.amount
+        }
+        return totalAmount
+    }
+
+    totalExpenses() {
+        let totalAmount = 0
+        for (let expense of this.expenses) {
+            totalAmount += expense.amount
+        }
+        return totalAmount
+    }
+
+    accountInfo() {
+        return `Name: ${this.firstName} ${this.lastName}\nBalance: ${this.accountBalance()}`
+    }
+
+    addIncome(obj) {
+        this.incomes.push(obj)
+        console.log('Income added')
+        console.log(this.totalIncome())
+    }
+
+    addExpenses(obj) {
+        this.expenses.push(obj)
+        console.log('Expenses added')
+        console.log(this.totalExpenses())
+    }
+
+    accountBalance() {
+        let income = this.totalIncome()
+        let expense = this.totalExpenses()
+        return income - expense
+    }
+}
+
+const myAccountInfo = new PersonAccount('Aravind','Ray', [{amount: 0, description: 'Jobless'}], [{amount: 5000, description: 'Father\'s Money'}])
+
+localStorage.setItem('myAccountInfo', JSON.stringify(myAccountInfo))
+
+console.log(localStorage.getItem('myAccountInfo'))
+
+let someThing = localStorage.getItem('myAccountInfo')
+
+someThing = JSON.parse(someThing)
+
+console.log(someThing)
+console.log(someThing.firstName)
+console.log(someThing)
+
+console.log(someThing.totalIncome()) // throws an error
+console.log(someThing.totalExpenses()) // throws an error because object methods didn't store in local storage
+console.log(myAccountInfo.accountBalance())
+console.log(myAccountInfo.accountInfo())
+myAccountInfo.addIncome({amount: 5000, description: 'Just Checking'})
+myAccountInfo.addIncome({amount: 5000, description: 'Just Checking'})
+myAccountInfo.addIncome({amount: 5000, description: 'Just Checking'})
+myAccountInfo.addExpenses({amount: 100, description: 'Snacks'})
+console.log(myAccountInfo.accountInfo())
