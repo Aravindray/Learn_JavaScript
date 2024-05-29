@@ -20500,3 +20500,89 @@ const countries = [
         "independent": true
     }
 ]
+
+// Level 1
+
+console.log('Level 1')
+
+console.log('---Question 1---')
+
+function returnCountriesAfter3() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(countries)
+        }, 3000);
+    })
+}
+
+async function countriesDetails() {
+    try {
+        let result = await returnCountriesAfter3()
+        for (const country of result) {
+            console.log(`Name: ${country.name} Capital: ${country.capital} Languages: ${country.languages} Population: ${country.population} Area: ${country.area}`);
+        }
+    } catch(error) {
+        console.log(error)
+    }
+}
+countriesDetails()
+
+// Level 3
+
+console.log('Level 3')
+
+console.log('---Question 2---')
+
+const returnCountriesAfter5 = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(countries)
+        },5000)
+    })
+}
+
+const highPopulation = async (count) => {
+    try {
+        let result = await returnCountriesAfter5()
+        let resultObj = []
+        for (const country of result) {
+            let obj = {
+                cName: country.name,
+                cPopulation: country.population
+            }
+            resultObj.push(obj)
+        }
+        resultObj.sort((a, b) => {
+            return b.cPopulation - a.cPopulation
+        })
+        console.log(resultObj.slice(0, count))
+    } catch(error) {
+        console.log(error)
+    }
+}
+highPopulation(10)
+
+console.log('---Question 3---')
+
+const allLanguages = async () => {
+    let languagesAll = []
+    try {
+        let response = await returnCountriesAfter5()
+        for (let country of response) {
+            for (let lang of country.languages) {
+                languagesAll.push(lang.name)
+            } 
+        }
+    } catch (error) {
+        return error
+    }
+    languagesAll.sort()
+    let setOfLanguages = new Set(languagesAll)
+    return setOfLanguages
+}
+
+async function waitForResult() {
+    let result = await allLanguages()
+    console.log(result)
+}
+waitForResult()
