@@ -1,20 +1,4 @@
-// Level 1
-
-console.log('Level 1')
-
-console.log('---Question 1---') // fetching keep on failing
-
-const countryAPI = 'https://restcountries.com/v2/all'
-
-async function countriesDetails() {
-    try {
-        let response = await fetch(countryAPI)
-        let result = await response.json()
-        console.log(result)
-    } catch(error) {
-        console.log(error)
-    }
-}
+// Level 1 - Question 1, Level 3 - Question 2, 3 - check 18_countryAPI.js file fetch keeps on failing
 
 // Level 2
 
