@@ -1,6 +1,6 @@
-const personDetails = {
-    description: 'Rich Bell challenges',
-    challengeTitle: 'Rich Bell challenges',
+export const personDetails = {
+    description: 'Rich Bell Challenges',
+    challengeTitle: 'Rich Bell Challenges',
     challengeSubtitle: '30 Days Of JavaScript Challenge',
     challengeYear: 2024,
     keywords: [
@@ -52,6 +52,8 @@ const personDetails = {
       ],
       qualifications: [
         'B.E. Electronics and Communication Engineering',
+        'B.Sc Forensic Science',
+        'B.Sc Psychology'
       ],
       socialLinks: [
         {
