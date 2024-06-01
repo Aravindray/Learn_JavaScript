@@ -30,9 +30,8 @@ main {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 500px;
-    /* background-image: url('../../assets/solar_system_image.jpg');
-    background-size: cover; */
-    background-color: #ffffff33;
+    background-image: url('../../assets/solar_system_image.jpg');
+    background-size: cover;
 }
 
 #whenError {
@@ -41,7 +40,9 @@ main {
 }
 
 #errorThrow {
-    background-color: #ffffff88;
+    background-color: #fff;
+    font-size: 3rem;
+    text-align: center;
 }
 
 #planetHolder {
@@ -49,8 +50,9 @@ main {
 }
 
 #result {
-    background-color: #ffffff55;
+    background-color: whitesmoke;
     justify-self: center;
+    text-align: center;
     align-self: center;
 }
 
@@ -80,8 +82,5 @@ input {
 
 #answer {
     text-align: center;
-    background-color: #ffffff88;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    background-color: #fff;
 }
