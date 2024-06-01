@@ -12,7 +12,33 @@
         <h1 id="title">Calculate a weight of an object on a planet</h1>
     </header>
     <main>
-        
+        <article id="userAction">
+            <input type="text" placeholder="Mass in Kilogram" id="userInput">
+            <select name="selectPlanet" id="selectPlanet">
+                <option value="selectOne">---Select Planet---</option>
+                <option value="mercury">Mercury</option>
+                <option value="venus">Venus</option>
+                <option value="earth">Earth</option>
+                <option value="moon">Moon</option>
+                <option value="mars">Mars</option>
+                <option value="jupiter">Jupiter</option>
+                <option value="saturn">Saturn</option>
+                <option value="uranus">Uranus</option>
+                <option value="neptune">Neptune</option>
+            </select>
+            <button id="btn">Calculate Weight</button>
+        </article>
+        <article id="container">
+            <div id="whenError">
+                <p id="errorThrow"></p>
+            </div>
+            <div id="planetHolder"></div>
+            <div id="result">
+                <!-- The Weigh of the object on -->
+                <p id="txtMessage"><span id="userSelected"></span></p>
+                <p id="answer"></p>
+            </div>
+        </article>
     </main>
     <script src="24_solar_system.js"></script>
 </body>

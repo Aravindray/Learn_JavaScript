@@ -1,1 +1,87 @@
-/* ffffff33 55 88 */
+body {
+    width: 80%;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-image: url(../../assets/galaxy.gif);
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem
+}
+
+#userAction {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 500px;
+    /* background-image: url('../../assets/solar_system_image.jpg');
+    background-size: cover; */
+    background-color: #ffffff33;
+}
+
+#whenError {
+    position: absolute;
+    background-color: #ffffff55;
+}
+
+#errorThrow {
+    background-color: #ffffff88;
+}
+
+#planetHolder {
+    justify-self: center;
+}
+
+#result {
+    background-color: #ffffff55;
+    justify-self: center;
+    align-self: center;
+}
+
+img {
+    display: block;
+}
+
+input {
+    width: 300px;
+    height: 30px;
+    font-size: 1.2rem;
+}
+
+#selectPlanet {
+    width: 250px;
+    height: 35px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+#btn {
+    width: 250px;
+    height: 35px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+
+#answer {
+    text-align: center;
+    background-color: #ffffff88;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
