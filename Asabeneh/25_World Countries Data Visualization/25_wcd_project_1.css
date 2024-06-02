@@ -1,0 +1,63 @@
+.bar {
+    height: 15px;
+    background-color: #ffa500;
+}
+
+div {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+}
+
+.name {
+    text-align: center;
+}
+
+.count {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+h1 {
+    color: #ffa500;
+    letter-spacing: 3px;
+    font-weight: bolder;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+#btnAction {
+    background-color: white;
+    display: flex;
+    gap: 1rem;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding-top: 1rem;
+}
+
+#btnStatus {
+    flex-basis: 100%;
+}
+
+button {
+    background-color: #ffa500;
+    font-size: 1.2rem;
+    color: white;
+    border-color: #ffa500;
+}
+
+main p {
+    text-align: center;
+}
