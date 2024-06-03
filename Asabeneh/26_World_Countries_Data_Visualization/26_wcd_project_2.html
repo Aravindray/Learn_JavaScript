@@ -8,6 +8,23 @@
     <link rel="shortcut icon" href="/assets/project-management.png" type="image/x-icon">
 </head>
 <body>
+    <header class="hero">
+        <h1>WORLD COUNTRIES LIST</h1>
+        <p>Total No. of countries: <span id="countriesCount"></span></p>
+        <p id="searchQuery"></p>
+        <div class="btns">
+            <button id="matchFirst">STARTING WORD</button>
+            <button id="matchAll">SEARCH WITH ANY WORD</button>
+            <button id="sort"><img src="/assets/alphabetical-sorting.png" alt="sorting icon"></button>
+        </div>
+        <div class="aboutSearch">
+            <input type="search" name="search" id="searchCountries">
+            <img src="/assets/search.png" alt="search icon" id="searchIcon">
+        </div>
+    </header>
+    <main id="listOfCountries">
+        <!-- <div class="card"></div> -->
+    </main>
     <script src="26_wcd_project_2.js" type="module"></script>
 </body>
 </html>
