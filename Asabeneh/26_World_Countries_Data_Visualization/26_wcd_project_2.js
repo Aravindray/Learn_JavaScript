@@ -4,8 +4,3 @@ async function fetchCountries() {
     let countries = await returnCountries()
     return countries
 }
-
-// (async function() {
-//     let result = fetchCountries()
-//     console.log(result)
-// })()
