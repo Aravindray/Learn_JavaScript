@@ -198,6 +198,6 @@ export function returnCountries () {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(countries)
-        }, 5000);
+        }, 3000);
     })
 }

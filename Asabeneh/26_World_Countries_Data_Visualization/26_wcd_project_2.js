@@ -31,8 +31,21 @@ function displayResult(arr) {
 
 let matchFirst = document.querySelector('#matchFirst')
 
-matchFirst.addEventListener('click', async (e) => {
-    listOfCountries.innerHTML = ''
-    let value = e.target.value
-    let countries = await fetchCountries()
-})
+// function userInput() {
+//     let searchCountries = document.querySelector('#searchCountries')
+//     searchCountries.addEventListener('input', (e) => {
+//         console.log(e.target.value)
+//         return e.target.value
+//     })
+// }
+
+// matchFirst.addEventListener('click', async () => {
+//     matchFirst.style.backgroundColor = 'blueviolet'
+//     listOfCountries.innerHTML = ''
+//     let countries = await fetchCountries()
+//     let value = userInput()
+//     let result = countries.filter(country => {
+//         return country.startsWith(value)
+//     })
+//     console.log(result)
+// })
