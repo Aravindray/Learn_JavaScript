@@ -1,0 +1,86 @@
+/* body */
+
+body {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Header */
+
+#fullName {
+    letter-spacing: 0.5rem;
+    font-size: 3rem;
+}
+
+/* Main */
+
+#transformBlock {
+    height: 70px;
+    background-color: #eddfde;
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+}
+
+#transformBlock span {
+    display: inline-block;
+    font-size: 2rem;
+} 
+
+/* bio */
+
+#bio {
+    font-size: 1.3rem;
+    line-height: 1.3;
+}
+
+#tech {
+    font-size: 1.3rem;
+}
+
+/* animation */
+
+.animation {
+    animation-duration: 2s;
+}
+
+.slideInRight {
+    animation-name: slideInRight;
+    animation-iteration-count: infinite;
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(0px);
+        color: gray;
+    }
+    100% {
+        transform: translate(70px);
+        color: black;
+    }
+}
+
+#highlights {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.scaleUp {
+    width: 250px;
+    height: 200px;
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    text-align: center;
+    background-color: #faf7f7;
+    padding: .5rem;
+    transition: transform .5s;
+}
+
+.scaleUp:hover {
+    background-color: #eddfde;
+    transform: scale(110%, 110%);
+}

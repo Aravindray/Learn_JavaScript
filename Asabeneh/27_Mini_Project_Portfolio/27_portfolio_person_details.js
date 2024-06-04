@@ -24,7 +24,7 @@ export const personDetails = {
         'SQL',
         'API',
         'DOM',
-        'data science',
+        'Data Science',
         'MERN',
         'Python',
         'Flask',
