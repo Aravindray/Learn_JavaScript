@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning JavaScript : DOM - Leaderboard</title>
+    <link rel="stylesheet" href="28_leaderboard.css">
+    <link rel="shortcut icon" href="/assets/clipboard.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>30 Days of JavaScript Challenge Leaderboard</h1>
+    </header>
+    <main>
+        <article>
+            <form id="userResponse">
+                <input type="text" required placeholder="First name" name="firstName">
+                <input type="text" required placeholder="Last name" name="lastName">
+                <input type="text" required placeholder="Country" name="country">
+                <input type="text" required placeholder="Player Score" name="score">
+                <input type="submit" value="Submit">
+            </form>
+            <p id="showError"></p>
+        </article>
+        <article id="dashboard">
+            <div id="user"> <!-- display:flex row -->
+                <div> <!-- display:flex column -->
+                    <h2 id="userName"></h2>
+                    <p id="createdDate"></p>
+                </div>
+                <div id="userCountry"></div>
+                <div id="userScore"></div>
+                <div class="btns"> <!-- display:flex row -->
+                    <div class="circle del" id="userId"></div>
+                    <div class="circle" id="incScore"></div>
+                    <div class="circle" id="decScore"></div>
+                </div>
+            </div>
+        </article>
+    </main>
+    <script src="28_leaderboard.js"></script>
+</body>
+</html>
