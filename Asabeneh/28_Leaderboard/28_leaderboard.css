@@ -1,0 +1,96 @@
+body {
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+
+#forms {
+    grid-area: 1 / 1 / 2 / -1;
+    align-self: center;
+    justify-self: center;
+}
+
+#container {
+    grid-area: 2 / 1 / -1/ -1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.userObject {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 70px 25px;
+    align-items: center;
+    background-color: #fae5e1;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+}
+
+.nameDate {
+    grid-area: 1 / 1 / -1 / 2;
+}
+
+.userCountry {
+    grid-area: 1 / 2 / -1 / 3;
+    font-size: 1.5rem;
+}
+
+.userScore {
+    grid-area: 1 / 3 / -1 / 4;
+    font-size: 1.5rem;
+}
+
+.btnHolder {
+    grid-area: 1 / 4 / -1 / 5;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+input[type="text"] {
+    font-size: 1.5rem;
+    width: 200px;
+    padding: 1rem;
+}
+
+input[type="submit"] {
+    font-size: 1.5rem;
+    padding: 1rem;
+    background-color: #fae5e1;
+    border-color: #fae5e1;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.accountCreatedDate {
+    font-size: 1rem;
+    color: #837e7e;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-color: white;
+}
+
+.incFive {
+    color: green;
+    font-size: 1.5rem;
+}
+
+.decFive {
+    color: red;
+    font-size: 1.5rem;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning JavaScript : DOM - Leader board</title>
+    <link rel="stylesheet" href="28_leaderboard.css">
+</head>
+<body>
+    <header>
+        <h1>30 Days of JavaScript Challenge Leader board</h1>
+    </header>
+    <main>
+        <article id="forms">
+            <form id="newPlayer">
+                <input type="text" name="newFirstName" placeholder="First Name" required>
+                <input type="text" name="newLastName" placeholder="Last Name" required>
+                <input type="text" name="newCountry" placeholder="Country" required>
+                <input type="text" name="newScore" placeholder="Player Score" required>
+                <input type="submit" value="+ Add Player" id="addPlayer">
+            </form>
+            <p id="showError"></p>
+        </article>
+        <article id="container">
+            <section class="userObject">
+                <div class="nameDate">
+                    <h2 class="userName">Aravind Ray</h2>
+                    <p class="accountCreatedDate">Jan 23, 3292 23:12</p>
+                </div>
+                <p class="userCountry">USA</p>
+                <p class="userScore">46</p>
+                <div class="btnHolder">
+                    <button class="delUser"><img src="../../assets/delete.png" alt="delete bin icon"></button>
+                    <button class="incFive">+5</button>
+                    <button class="decFive">-5</button>
+                </div>
+            </section>
+            <section class="userObject">
+                <div class="nameDate">
+                    <h2 class="userName">Daniel Raj</h2>
+                    <p class="accountCreatedDate">May 01, 1022 12:58</p>
+                </div>
+                <p class="userCountry">Singapore</p>
+                <p class="userScore">89</p>
+                <div class="btnHolder">
+                    <button class="delUser"><img src="../../assets/delete.png" alt="delete bin icon"></button>
+                    <button class="incFive">+5</button>
+                    <button class="decFive">-5</button>
+                </div>
+            </section>
+        </article>
+    </main>
+    <script src="28_leaderboard.js"></script>
+</body>
+</html>
