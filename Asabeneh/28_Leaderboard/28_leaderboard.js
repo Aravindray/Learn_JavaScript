@@ -24,3 +24,12 @@ const users = [
         createdDate: 'Jun 12, 2023 21:18',
     },
 ]
+
+let userResponse = document.querySelector('#userResponse')
+let subBtn = document.querySelector('#sub')
+
+subBtn.addEventListener('click', (e) => {
+    // e.preventDefault()
+    let userFirstName = document.getElementsByName('firstName')
+
+})
