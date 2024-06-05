@@ -25,11 +25,22 @@ const users = [
     },
 ]
 
-let userResponse = document.querySelector('#userResponse')
-let subBtn = document.querySelector('#sub')
+let showError = document.querySelector('#showError')
+let userResponse = document.getElementById('userResponse')
 
-subBtn.addEventListener('click', (e) => {
-    // e.preventDefault()
-    let userFirstName = document.getElementsByName('firstName')
-
+userResponse.addEventListener('submit', (e) => {
+    e.preventDefault()
+    let firstName = document.getElementsByName('firstName')
+    let lastName = document.getElementsByName('lastName')
+    let country = document.getElementsByName('country')
+    let score = document.getElementsByName('score')
+    if (firstName[0].value !== '' && lastName[0].value !== '' && country[0].value !== '' && score[0].value !== '') {
+        console.log(firstName[0].value)
+        console.log(lastName[0].value)
+        console.log(country[0].value)
+        console.log(score[0].value)
+    } else {
+        showError.textContent = 'All Field are required'
+        showError.style.color = 'red'
+    }
 })
