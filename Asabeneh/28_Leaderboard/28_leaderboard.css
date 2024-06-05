@@ -1,5 +1,12 @@
 /* body */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 body {
     width: 90%;
     margin: 0 auto;
@@ -7,10 +14,95 @@ body {
 
 header {
     text-align: center;
+    margin-top: 4%;
 }
 
 main {
+    margin-top: 4%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+input[type='text'] {
+    font-size: 1.5rem;
+    width: 200px;
+    padding: .5rem;
+}
+
+input[type='text']:focus {
+    outline: solid 2px #e5c9c5;
+    border: solid 1px #e5c9c5;
+}
+
+input[type='submit'] {
+    font-size: 1.5rem;
+    background-color: #e5c9c5;
+    border-color: #e5c9c5;
+    color: white;
+    padding: .5rem;
+}
+
+#user {
+    display: flex;
+    align-items: center;
+    gap: 11rem;
+    justify-content: center;
+    background-color: #e5c9c5;
+    padding: 1rem;
+}
+
+#nameHolder {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.btns {
+    display: flex;
+    gap: .5rem;
+}
+
+button {
+    font-size: 1.5rem;
+    width: 55px;
+    height: 55px;
+    /* padding: 1rem; */
+    border-radius: 50%;
+    border-color: #e5c9c5;
+}
+
+.del {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#dashboard {
+    margin-top: 4%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#userCountry, #userScore {
+    font-size: 1.5rem;
+}
+
+#userName {
+    font-size: 1.7rem;
+}
+
+#createdDate {
+    color: #888;
+}
+
+#showError {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 1%;
+}
+
+.nowrap {
+    white-space: nowrap;
 }
