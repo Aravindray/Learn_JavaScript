@@ -1,5 +1,5 @@
 body {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -10,7 +10,7 @@ h1 {
 
 main {
     display: grid;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 150px 1fr;
 }
 
 #forms {
@@ -33,7 +33,7 @@ main {
     align-items: center;
     background-color: #fae5e1;
     padding-left: 1rem;
-    padding-bottom: 1rem;
+    /* padding-bottom: 1rem; */
 }
 
 .nameDate {
@@ -58,7 +58,7 @@ main {
 
 input[type="text"] {
     font-size: 1.5rem;
-    width: 200px;
+    width: 150px;
     padding: 1rem;
 }
 
