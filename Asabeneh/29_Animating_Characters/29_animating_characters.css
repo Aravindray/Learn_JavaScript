@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Almendra+Display&family=Big+Shoulders+Stencil+Display:wght@100..900&family=Sedgwick+Ave+Display&family=Style+Script&family=Tiny5&display=swap');
+
+
+h1 {
+    font-size: 6rem;
+    letter-spacing: .5rem;
+    text-shadow: 1px 1px 5px white;
+    animation: fadeIn 3s infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
