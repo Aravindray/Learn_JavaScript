@@ -40,9 +40,9 @@ function displayUsers() {
             <p class="userCountry">${user.country}</p>
             <p class="userScore">${user.score}</p>
             <div class="btnHolder">
-                <button class="delUser" id="${user.userId}"><img src="../../assets/delete.png" alt="delete bin icon"></button>
-                <button class="incFive">+5</button>
-                <button class="decFive">-5</button>
+                <button onClick="delUser(this)" id="${user.userId}"><img src="../../assets/delete.png" alt="delete bin icon"></button>
+                <button class="incFive" onClick="incScore(this)" id="${user.userId}">+5</button>
+                <button class="decFive" onClick="decScore(this)" id="${user.userId}">-5</button>
             </div>
         </section>`
     }).join('')
@@ -92,12 +92,14 @@ function currentDateTime() {
 }
 
 function newUserId() {
-    let initial = users.length
-    function innerFun() {
-        initial++
-        return initial
+    if (users.length === 0) {
+        return 1
     }
-    return innerFun
+    let exitingId = []
+    for (let {userId} of users) {
+        exitingId.push(userId)
+    }
+    return exitingId[exitingId.length - 1] + 1
 }
 
 const newPlayer = document.querySelector('#newPlayer')
@@ -117,12 +119,62 @@ newPlayer.addEventListener('submit', (e) => {
                 lastName: newLastName,
                 country: newCountry,
                 score: scoreInt,
-                userId: newId(),
+                userId: newId,
                 createdDate: currentDateTime(),                
             }
             users.push(obj)
-            console.log(users.length)
             displayUsers()
         }
     }
+    newPlayer.reset()
 })
+
+function delUser(e) {
+    let user_id = e.id
+    let index = 0
+    for (let user of users) {
+        if (user_id == user.userId) {
+            break
+        } else {
+            index++
+        }
+    }
+    users.splice(index, 1)
+    displayUsers()
+}
+
+function incScore(e) {
+    let user_id = e.id
+    for(let user of users) {
+        if(user_id == user.userId) {
+            user.score = user.score + 5
+            if (user.score > 100) {
+                user.score = 100
+                displayError('Score Can not over 100')
+            }
+            break
+        }
+    }
+    setTimeout(() => {
+        removeError()
+    }, 2500);
+    displayUsers()
+}
+
+function decScore(e) {
+    let user_id = e.id
+    for(let user of users) {
+        if(user_id == user.userId) {
+            user.score = user.score - 5
+            if (user.score < 1) {
+                user.score = 0
+                displayError('Score Can not be NEGATIVE')
+            }
+            break
+        }
+    }
+    setTimeout(() => {
+        removeError()
+    }, 2500);
+    displayUsers()
+}
