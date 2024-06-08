@@ -56,6 +56,11 @@ button {
     border-radius: 25px;
 }
 
+#sortName:active, #sortCapital:active, #sortPopulation:active {
+    background-color: violet;
+    border-color: violet;
+}
+
 #showBarGraph {
     padding: .25rem;
     background-color: transparent;
@@ -110,15 +115,20 @@ button {
 
 .bar-card {
     display: grid;
-    gap: .5rem;
+    gap: .75rem;
     padding: 1rem;
     justify-content: space-between;
-    grid-template-columns: 50px 1fr 50px;
+    grid-template-columns: 100px 1fr 50px;
     justify-items: start;
     width: 90%;
     margin: 0 auto;
+    align-items: center;
 }
 
 .hide {
     display: none;
+}
+
+.barWidth {
+    height: 25px;
 }

@@ -2,6 +2,10 @@ import { returnCountries } from "./30_countries_data.js";
 
 const listOfColors = ['aqua', 'aquamarine', 'bisque', 'blanchedalmond', 'blue', 'blueviolet', 'cadetblue', 'chartreuse', 'coral', 'cornflowerblue', 'cyan', 'darkblue', 'darkorchid', 'darkturquoise', 'deeppink', 'deepskyblue', 'dodgerblue', 'forestgreen', 'fuchsia', 'gold', 'green', 'gray', 'greenyellow', 'hotpink', 'lawngreen', 'lightgreen', 'lightblue','lime', 'limegreen', 'magenta', 'mediumaquamarine', 'mediumspringgreen', 'mistyrose', 'orange', 'orangered', 'orchid', 'red', 'royalblue', 'salmon', 'seagreen', 'silver', 'slateblue', 'springgreen', 'teal', 'tomato', 'turquoise', 'violet', 'yellow', 'yellowgreen']
 
+function returnRandomColor() {
+    return listOfColors[Math.floor(Math.random() * listOfColors.length)]
+}
+
 // header
 
 let header = document.querySelector('.header')
@@ -25,8 +29,14 @@ let showLanguages = document.querySelector('#showLanguages')
 let buttonStatus = document.querySelector('#buttonStatus')
 let barContainer = document.querySelector('#bar-container')
 let barGraphTemplate = document.querySelector('[bar-graph-template]')
+let worldPopulation = 0
 
 let searchQuery = []
+let graphSearchQuery = []
+let arrayOfLanguages = []
+let setOfLanguages
+let langObj = []
+let mappedCountries = []
 
 function displayCountries(countries) {
     countriesCount.textContent = `${countries.length} Countries`
@@ -61,42 +71,63 @@ async function fetchCountries() {
     sortName.addEventListener('click', () => {
         if (doCheck) {
             sortName.textContent = 'Name'
-            sortName.style.backgroundColor = 'orange'
-            sortName.style.borderColor = 'orange'
             cardContainer.innerHTML = ''
-            displayCountries(countries.reverse())
+            countries.sort((a, b) => {
+                let A = a.name.toLowerCase()
+                let B = b.name.toLowerCase()
+                return A.localeCompare(B)
+            })
+            displayCountries(countries)
             doCheck = false
         } else {
             sortName.textContent = 'Name ↓'
-            sortName.style.backgroundColor = 'violet'
-            sortName.style.borderColor = 'violet'
             cardContainer.innerHTML = ''
-            displayCountries(countries.reverse())
+            countries.sort((a, b) => {
+                let A = a.name.toLowerCase()
+                let B = b.name.toLowerCase()
+                return B.localeCompare(A)
+            })
+            displayCountries(countries)
             doCheck = true
         }
     })
     sortCapital.addEventListener('click', () => {
         if (doCheck) {
             sortCapital.textContent = 'Capital'
-            sortCapital.style.backgroundColor = 'orange'
-            sortCapital.style.borderColor = 'orange'
             cardContainer.innerHTML = ''
             countries.sort((a, b) => {
-                let capitalA = a.capital.toLowerCase()
-                let capitalB = b.capital.toLowerCase()
+                let capitalA = (typeof a.capital === 'undefined') ? '' : a.capital.toLowerCase()
+                let capitalB = (typeof b.capital === 'undefined') ? '' : b.capital.toLowerCase()
                 return capitalA.localeCompare(capitalB)
             })
             displayCountries(countries)
             doCheck = false
         } else {
             sortCapital.textContent = 'Capital ↓'
-            sortCapital.style.backgroundColor = 'violet'
-            sortCapital.style.borderColor = 'violet'
             cardContainer.innerHTML = ''
             countries.sort((a, b) => {
-                let capitalA = a.capital.toLowerCase()
-                let capitalB = b.capital.toLowerCase()
+                let capitalA = (typeof a.capital === 'undefined') ? '' : a.capital.toLowerCase()
+                let capitalB = (typeof b.capital === 'undefined') ? '' : b.capital.toLowerCase()
                 return capitalB.localeCompare(capitalA)
+            })
+            displayCountries(countries)
+            doCheck = true
+        }
+    })
+    sortPopulation.addEventListener('click', () => {
+        if (doCheck) {
+            sortPopulation.textContent = 'Population'
+            cardContainer.innerHTML = ''
+            countries.sort((a, b) => {
+                return a.population - b.population
+            })
+            displayCountries(countries)
+            doCheck = false
+        } else {
+            sortPopulation.textContent = 'Population ↓'
+            cardContainer.innerHTML = ''
+            countries.sort((a, b) => {
+                return b.population - a.population
             })
             displayCountries(countries)
             doCheck = true
@@ -114,4 +145,70 @@ searchInput.addEventListener('input', (e) => {
     })
     searchCount.textContent = `${matchCount.length} countries satisfied the search criteria`
     header.appendChild(searchCount)
+    console.log(graphSearchQuery)
+    graphSearchQuery.forEach(country => {
+        let showTrue = country.name.toLowerCase().includes(value)
+        country.element.classList.toggle('hide', !showTrue)
+    })
+})
+
+function displayGraph(arr, count) {
+    let WP = count
+    graphSearchQuery = arr.map(ele => {
+        let barCard = barGraphTemplate.content.cloneNode(true).children[0]
+        let barName = barCard.querySelector('.barName')
+        let barWidth = barCard.querySelector('.barWidth')
+        let barCount = barCard.querySelector('.barCount')
+        barName.textContent = ele.name
+        barCount.textContent = ele.count
+        barWidth.style.width = `${Math.round((ele.count / WP) * 100)}%`
+        barWidth.style.backgroundColor = `${returnRandomColor()}`
+        barContainer.append(barCard)        
+        return {
+            name: ele.name,
+            element: barCard
+        }
+    })
+}
+
+async function fetchCountriesAgain() {
+    let countries = await returnCountries()
+    worldPopulation = countries.reduce((acc, cur) => acc + cur.population, 0)
+    mappedCountries = countries.map(country => {
+        return {
+            name: country.name,
+            count: country.population
+        }
+    })
+    mappedCountries.unshift({name: 'World', count: worldPopulation})
+    mappedCountries.sort((a, b) => b.count - a.count)
+    displayGraph(mappedCountries, worldPopulation)
+    for (let country of countries) {
+        for (let language of country.languages) {
+            arrayOfLanguages.push(language)
+        }
+    }
+    setOfLanguages = new Set(arrayOfLanguages)
+    for (let lang of setOfLanguages) {
+        let resultCount = arrayOfLanguages.filter(ele => ele === lang)
+        let obj = {
+            name: lang,
+            count: resultCount.length
+        }
+        langObj.push(obj)
+    }
+    langObj.sort((a, b) => b.count - a.count)
+}
+fetchCountriesAgain()
+
+showLanguages.addEventListener('click', () => {
+    barContainer.innerHTML = ''
+    buttonStatus.textContent = '10 Most Spoken Languages in the world'
+    displayGraph(langObj.slice(0, 10), langObj[0].count)
+})
+
+showPopulation.addEventListener('click', () => {
+    barContainer.innerHTML = ''
+    buttonStatus.textContent = '10 Most Populated countries in the world'
+    displayGraph(mappedCountries.slice(0, 11), worldPopulation)
 })
