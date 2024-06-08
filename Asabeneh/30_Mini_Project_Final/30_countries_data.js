@@ -1200,7 +1200,7 @@ const countries = [
         "name": "India",
         "capital": "New Delhi",
         "languages": [
-            "Hindi",
+            "Tamil",
             "English"
         ],
         "population": 1380004385,
