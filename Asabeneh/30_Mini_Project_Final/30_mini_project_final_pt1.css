@@ -88,3 +88,33 @@ button {
     text-align: center;
     margin-bottom: .75rem;
 }
+
+.buttonsOfGraph {
+    text-align: center;
+}
+
+#showLanguages, #showPopulation {
+    width: 150px;
+    padding: .25rem;
+    border-radius: 25px;
+    height: 45px;
+}
+
+#buttonStatus {
+    margin-top: 1rem;
+}
+
+#bar-container {
+    margin-top: 1rem;
+}
+
+.bar-card {
+    display: grid;
+    gap: .5rem;
+    padding: 1rem;
+    justify-content: space-between;
+    grid-template-columns: 50px 1fr 50px;
+    justify-items: start;
+    width: 90%;
+    margin: 0 auto;
+}

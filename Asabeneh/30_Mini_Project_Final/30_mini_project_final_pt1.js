@@ -1,3 +1,3 @@
 import { returnCountries as countries } from "./30_countries_data";
 
-const listOfColors = ['aqua', '']
+const listOfColors = ['aqua', 'aquamarine', 'bisque', 'blanchedalmond', 'blue', 'blueviolet', 'cadetblue', 'chartreuse', 'coral', 'cornflowerblue', 'cyan', 'darkblue', 'darkorchid', 'darkturquoise', 'deeppink', 'deepskyblue', 'dodgerblue', 'forestgreen', 'fuchsia', 'gold', 'green', 'gray', 'greenyellow', 'hotpink', 'lawngreen', 'lightgreen', 'lightblue','lime', 'limegreen', 'magenta', 'mediumaquamarine', 'mediumspringgreen', 'mistyrose', 'orange', 'orangered', 'orchid', 'red', 'royalblue', 'salmon', 'seagreen', 'silver', 'slateblue', 'springgreen', 'teal', 'tomato', 'turquoise', 'violet', 'yellow', 'yellowgreen']
