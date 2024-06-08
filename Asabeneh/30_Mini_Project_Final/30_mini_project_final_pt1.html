@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning JavaScript : DOM - Countries Project</title>
+    <link rel="stylesheet" href="30_mini_oroject_final_pt1.css">
+    <link rel="shortcut icon" href="../../assets/clipboard.png" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <h1>World Countries Data</h1>
+        <p>Currently, we have <span id="countriesCount"></span> </p>
+        <!-- <p id="searchCount"></p>  7 countries satisfied the search criteria -->
+    </header>
+    <main>
+        <article class="searchAndButtons">
+            <input type="search" name="search" id="search" placeholder="Search countries by name, city and languages">
+            <section class="sortingButtons">
+                <button id="sortName">Name</button>
+                <button id="sortCapital">Capital</button>
+                <button id="sortPopulation">Population</button>
+                <button id="showBarGraph"><a href="#barGraph"><img src="../../assets/horizontal-bar-graph.png" alt="horizontal bar graph"></a></button>
+            </section>
+        </article>
+        <article id="card-container">
+        
+        </article>
+        <template country-card-template>
+            <div class="card">
+                <img src="" alt="" width="150px" height="150px">
+                <h2 class="countryName"></h2>
+                <p><b>Capital: </b><span class="countryCapital"></span></p>
+                <p><b>Languages: </b><span class="countryLanguages"></span></p>
+                <p><b>Population: </b><span class="countryPopulation"></span></p>
+            </div>
+        </template>
+        <br>
+        <hr>
+        <br>
+        <article id="barGraph">
+            <section class="buttonsOfGraph">
+                <button id="showPopulation">Population</button>
+                <button id="showLanguages">Languages</button>
+                <p id="buttonStatus"></p> <!--10 Most Populated countries in the world / Spoken Languages-->
+            </section>
+            <section id="bar-container">
+                <div class="bar-card">
+                    <p class="barName">World</p>
+                    <p class="barWidth" style="width: 100%; background-color: orange; height: 15px;"></p>
+                    <p class="barCount">6458887946864</p>
+                </div>
+                <div class="bar-card">
+                    <p class="barName">China</p>
+                    <p class="barWidth" style="width: 80%; background-color: orange; height: 15px;"></p>
+                    <p class="barCount">688786688</p>
+                </div>
+                <div class="bar-card">
+                    <p class="barName">India</p>
+                    <p class="barWidth" style="width: 70%; background-color: orange; height: 15px;"></p>
+                    <p class="barCount">688786611</p>
+                </div>
+            </section>
+            <template bar-graph-template>
+                <div class="bar-card">
+                    <p class="barName"></p>
+                    <p class="barWidth"></p>
+                    <p class="barCount"></p>
+                </div>
+            </template>
+        </article>
+    </main>
+    <script src="30_mini_oroject_final_pt1.js" type="module"></script>
+</body>
+</html>
