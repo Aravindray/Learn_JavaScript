@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="shortcut icon" href="../../assets/search.png" type="image/x-icon">
     <script src="30_mini_project_final_pt2.js" defer></script>
 </head>
+
 <body>
     <header>
         <h1>Validating Web Forms</h1>
@@ -16,24 +18,26 @@
         <form action="">
             <label for="first-name">First Name</label>
             <input type="text" name="first-name" id="first-name">
-            <p class="throwError"></p>
+            <p class="fn-trowEor">First name must be alphanumeric and contain 3-16 characters</p>
             <label for="last-name">Last Name</label>
             <input type="text" name="last-name" id="last-name">
-            <p class="throwError"></p>
+            <p class="throwError">Last name must be alphanumeric and contain 3-16 characters</p>
             <label for="email">Email</label>
             <input type="email" name="email" id="email">
-            <p class="throwError"></p>
-            <label for="password">PassWord</label>
+            <p class="throwError">Email must be valid address, e.g. example@example.com</p>
+            <label for="password">Password</label>
             <input type="password" name="password" id="password">
-            <p class="throwError"></p>
+            <p class="throwError">Password must be alphanumeric (@, _ and - are allowed) and between 6-20 characters</p>
             <label for="tele">Telephone</label>
             <input type="tel" name="tele" id="tele">
-            <p class="throwError"></p>
+            <p class="throwError">A valid telephone number (11 digits and 333-333-3334)</p>
             <label for="your-bio">Your bio</label>
             <input type="text" name="your-bio" id="your-bio">
-            <p class="throwError"></p>
+            <p class="throwError">Bio must contain only lowercase letters, underscores, hyphens and be 8 - 50 characters
+            </p>
             <input type="submit" value="Submit">
         </form>
     </main>
 </body>
+
 </html>

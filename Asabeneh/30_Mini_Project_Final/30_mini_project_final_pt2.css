@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p {
+    /* text-align: center; */
+    margin-bottom: 1rem;
+    color: orange;
+    font-weight: bold;
+}
+
+input {
+    display: block;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 550px;
+    border-radius: 4px;
+    border: 1px solid #444;
+    padding: 0 1rem;
+    height: 40px;
+}
+
+input[type='submit'] {
+    width: 150px;
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: .5rem 1rem;
+    height: 55px;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin: 1rem;
+}
+
+main {
+    width: 40%;
+    margin: 0 auto;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
