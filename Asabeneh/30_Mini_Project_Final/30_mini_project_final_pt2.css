@@ -28,6 +28,13 @@ input[type="password"] {
     height: 40px;
 }
 
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] :is(focus) {
+    outline: none;
+}
+
 input[type='submit'] {
     width: 150px;
     background-color: #444;
