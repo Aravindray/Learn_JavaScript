@@ -11,6 +11,7 @@ let lnTrowEor = document.querySelector('.ln-trowEor')
 let emTrowEor = document.querySelector('.em-trowEor')
 let psTrowEor = document.querySelector('.ps-trowEor')
 let telTrowEor = document.querySelector('.tel-trowEor')
+let bioTrowEor = document.querySelector('.bio-trowEor')
 
 let namePattern = /^[A-Z]{1}[a-z0-9]{2,15}$/g
 
@@ -71,7 +72,7 @@ password.addEventListener('input', (e) => {
     console.log(result)
 })
 
-let telPattern = /^\d{3}\-\d{3}\-\d{4}$/gi
+let telPattern = /^\d{3}\-\d{3}\-\d{4}$/g
 
 tel.addEventListener('input', (e) => {
     let value = e.target.value
@@ -82,6 +83,21 @@ tel.addEventListener('input', (e) => {
     } else {
         telTrowEor.style.display = 'block'
         tel.style.border = '3px solid orange'
+    }
+    console.log(result)
+})
+
+let bioPattern = /[a-z0-9\s\W]{8,50}/g
+
+bio.addEventListener('input', (e) => {
+    let value = e.target.value
+    let result = bioPattern.test(value)
+    if (result) {
+        bioTrowEor.style.display = 'none'
+        bio.style.border = '3px solid lime'
+    } else {
+        bioTrowEor.style.display = 'block'
+        bio.style.border = '3px solid orange'
     }
     console.log(result)
 })
